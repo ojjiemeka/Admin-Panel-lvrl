@@ -192,7 +192,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <label for="formrow-inputState" class="form-label">Country</label>
                                                 <select id="formrow-inputState" class="form-select">
