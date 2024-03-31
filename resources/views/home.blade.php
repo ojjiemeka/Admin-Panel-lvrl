@@ -11,69 +11,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Exchange</h4>
-
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Crypto</a></li>
-                                    <li class="breadcrumb-item active">Exchange</li>
-                                </ol>
-                            </div>
+                            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
 
                         </div>
                     </div>
                 </div>
                 <!-- end page title -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-shrink-0 me-3">
-                                        <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-md rounded-circle img-thumbnail">
-                                    </div>
-                                    <div class="flex-grow-1 align-self-center">
-                                        <div class="text-muted">
-                                            <h5>Henry wells</h5>
-                                            <p class="mb-1">henrywells@abc.com</p>
-                                            <p class="mb-0">Id no: #SK0234</p>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-wallet me-1"></i> <span class="d-none d-sm-inline-block">Wallet Balance <i class="mdi mdi-chevron-down"></i></span></button>
-                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-md">
-                                            <div class="dropdown-item-text">
-                                                <div>
-                                                    <p class="text-muted mb-2">Available Balance</p>
-                                                    <h5 class="mb-0">$ 9148.23</h5>
-                                                </div>
-                                            </div>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <a class="dropdown-item" href="#">
-                                                BTC : <span class="float-end">1.02356</span>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                ETH : <span class="float-end">0.04121</span>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                LTC : <span class="float-end">0.00356</span>
-                                            </a>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <a class="dropdown-item text-primary text-center" href="#">
-                                                Learn more
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              @include('components/quickMenu')
                 <!-- end row -->
 
                 <!-- end row -->

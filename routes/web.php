@@ -20,5 +20,6 @@ Route::get('/', function () {
 Route::resource('celebs', CelebController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/mailer', [App\Http\Controllers\HomeController::class, 'createMail'])->name('createMail');
 Auth::routes();
 
