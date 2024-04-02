@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/aboutUs', [App\Http\Controllers\PagesController::class, 'aboutUs'])->name('aboutUs');
+Route::get('/aboutUs', [App\Http\Controllers\PagesController::class, 'ContactUs'])->name('contactUs');
+
 Route::resource('celebs', CelebController::class);
 Route::resource('prices', PricesController::class);
 
