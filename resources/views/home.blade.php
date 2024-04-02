@@ -2,7 +2,6 @@
 
 @section('content')
     @include('components.header')
-    @include('components.topNav')
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">

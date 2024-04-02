@@ -2,7 +2,7 @@
 
 @section('content')
     @include('components.header')
-    @include('components.topNav')
+    {{-- @include('components.topNav') --}}
     <div class="main-content">
 
         <div class="page-content">
