@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CelebController;
+use App\Http\Controllers\PricesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('celebs', CelebController::class);
+Route::resource('prices', PricesController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mailer', [App\Http\Controllers\HomeController::class, 'createMail'])->name('createMail');

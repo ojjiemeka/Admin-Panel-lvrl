@@ -2,7 +2,7 @@
 import './plugin.js';
 import '../libs/jquery/jquery.min.js';
 import '../libs/bootstrap/js/bootstrap.bundle.min.js';
-import '../libs/metismenu/metisMenu.min.js';
+// import '../libs/metismenu/metisMenu.min.js';
 import '../libs/simplebar/simplebar.min.js';
 import '../libs/node-waves/waves.min.js';
 import '../libs/jquery-steps/build/jquery.steps.min.js';
