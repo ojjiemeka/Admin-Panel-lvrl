@@ -4,7 +4,7 @@
           <div class="col-lg-2 col-6">
               <!-- logo-->
                <a class="navbar-brand logo" href="index.html">
-                   <img src="images/logos/logo-alt.png" alt="">
+                   <img src="{{asset('images/logos/logo-alt.png')}}" alt="">
                </a>
           </div><!-- end col -->
 

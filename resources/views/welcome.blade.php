@@ -10,6 +10,60 @@
     @include('components.indexHeader')
     <!-- banner end-->
 
+    <section class="hero-area banner-6">
+      <div class="banner-item">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="banner-content-wrap">
+                     <h2 class="sub-title">#The leading startup event</h2>
+                     <h2 class="banner-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="700ms">
+                         Greater <br> than Avatars
+                     </h2>
+                     <div class="banner-info wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
+                         <div class="icon">
+                              <img src="{{asset('exhibz/images/shap/Shape-1.png')}}" alt="">   
+                         </div>
+                           <h3>Gotham Hall, 1356 Broadway, NY 10018, USA</h3>
+                     </div>
+                     <!-- Countdown end -->
+                     <div class="ts-count-down">
+                         <div class="countdown clearfix">
+                             <div class="counter-item">
+                                 <span class="days">00</span>
+                                 <div class="smalltext">Days</div>
+                                 <b>:</b>
+                             </div>
+                             <div class="counter-item">
+                                 <span class="hours">00</span>
+                                 <div class="smalltext">Hours</div>
+                                 <b>:</b>
+                             </div>
+                             <div class="counter-item">
+                                 <span class="minutes">00</span>
+                                 <div class="smalltext">Minutes</div>
+                                 <b>:</b>
+                             </div>
+                             <div class="counter-item">
+                                 <span class="seconds">00</span>
+                                 <div class="smalltext">Seconds</div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="banner-btn wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
+                             <a href="#" class="btn">Buy Ticket</a>
+                             <a href="#" class="btn btn-ticket"> <i class="fa fa-plus-circle" aria-hidden="true"></i> ADD TO CALENDAR</a>
+                     </div>
+
+                  </div>
+                  <!-- Banner content wrap end -->
+               </div><!-- col end-->
+            </div><!-- row end-->
+         </div>
+         <!-- Container end -->
+      </div>
+   </section>
+
     <!-- ts-exprience start -->
     <section class="ts-exprience">
           <div class="container">
@@ -55,7 +109,7 @@
     <!-- end ts-exprience -->
 
   <!-- ts funfact start-->
-  <section class="ts-funfact" style="background-image: url(images/funfact_bg.jpg)">
+  <section class="ts-funfact" style="background-image: url('../')">
       <div class="container">
           <div class="row">
               <div class="col-lg-3 col-md-6">

@@ -590,7 +590,9 @@ img.pull-right {
       hero area
 ===========================*/
 .hero-area {
-  padding: 0; }
+  background-image: url('../../index_img/banner/banner_img.png');
+  padding: 0;
+ }
 
 .banner-6 {
   background-position: top right;
