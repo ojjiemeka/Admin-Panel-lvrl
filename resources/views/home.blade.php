@@ -17,7 +17,7 @@
                 </div>
                 <!-- end page title -->
 
-              @include('components/quickMenu')
+                @include('components/quickMenu')
                 <!-- end row -->
 
                 <!-- end row -->
@@ -40,7 +40,7 @@
                                                 <th>Age</th>
                                                 <th>Status</th>
                                                 <th>Actions</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -86,7 +86,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                        </table>
+                                    </table>
                                 </div>
 
                             </div>
@@ -101,11 +101,12 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Full Name</label>
-                                        <input type="text" class="form-control" id="formrow-firstname-input" placeholder="Enter Celeb Name">
+                                        <input type="text" class="form-control" id="formrow-firstname-input"
+                                            placeholder="Enter Celeb Name">
                                     </div>
 
                                     <div class="row">
-                                        
+
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="date" class="form-label">Date of Birth</label>
@@ -114,8 +115,7 @@
                                                         <input type="date" class="form-control docs-date" name="date"
                                                             placeholder="Pick a date" autocomplete="off">
                                                         <button type="button"
-                                                            class="btn btn-secondary docs-datepicker-trigger"
-                                                            disabled>
+                                                            class="btn btn-secondary docs-datepicker-trigger" disabled>
                                                             <i class="mdi mdi-calendar" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -182,10 +182,10 @@
                     </div>
                 </div>
                 <!-- end row -->
-                
+
             </div> <!-- container-fluid -->
         </div>
     </div>
-        @include('components.footer')
+    @include('components.footer')
     </div>
 @endsection

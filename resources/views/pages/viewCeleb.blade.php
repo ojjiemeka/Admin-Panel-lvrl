@@ -2,6 +2,10 @@
 
 @section('content')
     @include('components.header')
+<<<<<<< HEAD
+=======
+    {{-- @include('components.topNav') --}}
+>>>>>>> f3aad89ea20df3fc0b7571575eea512a65373124
     <div class="main-content">
 
         <div class="page-content">

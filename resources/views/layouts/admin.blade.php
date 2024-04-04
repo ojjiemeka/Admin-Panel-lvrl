@@ -13,9 +13,9 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js']);
 
 
 </head>
