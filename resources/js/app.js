@@ -6,7 +6,12 @@ import '../libs/metismenu/metisMenu.min.js';
 import '../libs/simplebar/simplebar.min.js';
 import '../libs/node-waves/waves.min.js';
 import '../libs/jquery-steps/build/jquery.steps.min.js';
-import '../js/pages/form-wizard.init.js';
+import '.pages/form-wizard.init.js';
+
+import '../libs/bootstrap-editable/js/index.js';
+import '../libs/moment/min/moment.min.js';
+import './pages/form-xeditable.init.js';     
+
 
 // import '';
 
