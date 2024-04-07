@@ -1,96 +1,68 @@
-	<!-- ts footer area start-->
-   <div class="footer-area">
-
-      <!-- ts-book-seat start-->
-      <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-8 mx-auto">
-                  <div class="book-seat-content text-center mb-70">
-                     <h2 class="section-title white">
-                        <span>Hurry up!</span>
-                        Book your Seat
-                     </h2>
-                     <a href="#" class="btn">Buy Ticket</a>
-                  </div><!-- book seat end-->
-               </div><!-- col end-->
-
-            </div><!-- row end-->
-            <div class="ts-footer-newsletter">
-               <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
-                  <div class="row">
-                     <div class="col-lg-6 mx-auto">
-                        <div class="ts-newsletter-content">
-                           <h2 class="section-title">
-                              <span>sUBSCRIBE TO nEWSLETTER</span>
-                              Want something extra?
-                           </h2>
-                        </div>
-                        <div class="newsletter-form">
-                           <form action="#" method="post" class="media align-items-end">
-                              <div class="email-form-group media-body">
-                                 <input type="email" name="email" id="newsletter-form-email" class="form-control"
-                                    placeholder="Your Email" autocomplete="off" required="">
-                              </div>
-                              <div class="d-flex ts-submit-btn">
-                                 <button class="btn">Subscribe</button>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div><!-- container end-->
-      </section>
-      <!-- book seat  end-->
-
-      <!-- footer start-->
-      <footer class="ts-footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-8 mx-auto">
-                  <div class="ts-footer-social text-center mb-30">
-                     <ul>
-                        <li>
-                           <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="fa fa-instagram"></i></a>
-                        </li>
-                     </ul>
-                  </div>
-                  <!-- footer social end-->
-                  <div class="footer-menu text-center mb-25">
-                     <ul>
-                        <li><a href="#">About Eventime</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Tickets</a></li>
-                        <li><a href="#">Venue</a></li>
-                     </ul>
-                  </div><!-- footer menu end-->
-                  <div class="copyright-text text-center">
-                     <p>Copyright © 2018 Exhibit. All Rights Reserved.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-               <!-- footer end-->
-               
-               <div class="BackTo">
-                           <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
-                       </div>
-
+<div id="preFooter">
+   <div class="pre-footer-inner with-custom">
+       <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Pre-Footer Content"
+           data-type="block-field" data-updated-on="1625723047006" id="preFooterBlocks">
+           <div class="row sqs-row">
+               <div class="col sqs-col-12 span-12"></div>
+           </div>
+       </div>
    </div>
-   <!-- ts footer area end-->
+
+</div>
+
+<footer id="footer" role="contentinfo">
+   <div class="footer-inner">
+       <div class="nav-wrapper back-to-top-nav">
+           <nav>
+               <div class="back-to-top"><a href="#header">Back To Top</a></div>
+           </nav>
+       </div>
+       <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content"
+           data-type="block-field" data-updated-on="1679068178062" id="footerBlocks">
+           <div class="row sqs-row">
+               <div class="col sqs-col-12 span-12">
+                   <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2"
+                       data-block-type="54" id="block-844f675825d24aec87c0">
+                       <div class="sqs-block-content">
+                           <div
+                               class="sqs-svg-icon--outer social-icon-alignment-center social-icons-color-white social-icons-size-medium social-icons-style-regular ">
+                               <style>
+                                   #block-844f675825d24aec87c0 .social-icons-style-border .sqs-svg-icon--wrapper {
+
+                                       box-shadow: 0 0 0 2px inset;
+
+                                       border: none;
+                                   }
+                               </style>
+                               <nav class="sqs-svg-icon--list">
+                                   <a href="https://www.instagram.com/entertainment360/" target="_blank"
+                                       class="sqs-svg-icon--wrapper instagram-unauth" aria-label="Instagram">
+                                       <div>
+                                           <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+                                               <use class="sqs-use--icon"
+                                                   xlink:href="#instagram-unauth-icon"></use>
+                                               <use class="sqs-use--mask"
+                                                   xlink:href="#instagram-unauth-mask"></use>
+                                           </svg>
+                                       </div>
+                                   </a>
+                               </nav>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                       data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
+                       id="block-yui_3_17_2_1_1628648855517_26580">
+                       <div class="sqs-block-content">
+
+                           <div class="sqs-html-content">
+                               <p class="text-center">© 2022 |
+                                   Entertainment 360®</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</footer>

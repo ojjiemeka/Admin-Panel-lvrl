@@ -339,7 +339,7 @@ small device /mobile sm and large
         .banner-item .banner-content-wrap .banner-btn .btn.fill {
           margin-left: 0; }
   .banner-6 .banner-item .banner-content-wrap .banner-title {
-    font-size: 36px;
+    font-size: 80px !important;
     line-height: 1.2; }
   .banner-6-alt .banner-item .banner-content-wrap .banner-title {
     margin-bottom: 50px; }

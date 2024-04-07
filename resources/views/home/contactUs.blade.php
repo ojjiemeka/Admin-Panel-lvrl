@@ -1,172 +1,113 @@
 @extends('layouts.welcome')
 
 @section('content')
-<div class="body-inner">
-    <!-- banner start-->
-    @include('components.indexHeader')
+    <div id="site">
 
-    <div id="page-banner-area" class="page-banner-area" style="background-image:url(images/hero_area/banner_bg.jpg)">
-        <!-- Subpage title start -->
-        <div class="page-banner-title">
-           <div class="text-center">
-              <h2>Contact Us</h2>
-              <ol class="breadcrumb">
-                 <li>
-                    <a href="#">Exibit /</a>
-                 </li>
-                 <li>
-                    Contact Us
-                 </li>
-              </ol>
-           </div>
-        </div><!-- Subpage title end -->
-     </div><!-- Page Banner end -->
+        <input type="checkbox" name="mobile-nav-toggle" id="mobileNavToggle" class="mobile-nav-toggle-box hidden" />
 
-     <!-- ts intro start -->
-     <section class="ts-contact">
-        <div class="container">
-           <div class="row">
-              <div class="col-lg-8 mx-auto">
-                 <h2 class="section-title text-center">
-                    <span>Get Information</span>
-                    Contact Information
-                 </h2>
-              </div><!-- col end-->
-           </div>
-           <div class="row">
-              <div class="col-lg-4">
-                 <div class="single-intro-text single-contact-feature">
-                    <h3 class="ts-title">Tickets info</h3>
-                    <p>
-                       <strong>Name:</strong> Ronaldo König
-                    </p>
-                    <p>
-                       <strong>Phone:</strong> 009-215-5595
-                    </p>
-                    <p>
-                       <strong>Email:</strong> <a href="https://demo.themewinter.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae3e4ece5caeff2ebe7fae6efa4e9e5e7">[email&#160;protected]</a>
-                    </p>
-                    <span class="count-number fa fa-paper-plane"></span>
-                 </div><!-- single intro text end-->
-                 <div class="border-shap left"></div>
-              </div><!-- col end-->
-              <div class="col-lg-4">
-                 <div class="single-intro-text single-contact-feature">
-                    <h3 class="ts-title">Partnerships info</h3>
-                    <p>
-                       <strong>Name:</strong> Ronaldo König
-                    </p>
-                    <p>
-                       <strong>Phone:</strong> 009-215-5595
-                    </p>
-                    <p>
-                       <strong>Email:</strong> <a href="https://demo.themewinter.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640d0a020b24011c05091408014a070b09">[email&#160;protected]</a>
-                    </p>
-                    <span class="count-number fa fa-paper-plane"></span>
-                 </div><!-- single intro text end-->
-                 <div class="border-shap left"></div>
-              </div><!-- col end-->
-              <div class="col-lg-4">
-                 <div class="single-intro-text single-contact-feature">
-                    <h3 class="ts-title">Programme Details</h3>
-                    <p>
-                       <strong>Name:</strong> Ronaldo König
-                    </p>
-                    <p>
-                       <strong>Phone:</strong> 009-215-5595
-                    </p>
-                    <p>
-                       <strong>Email:</strong> <a href="https://demo.themewinter.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="50393e363f103528313d203c357e333f3d">[email&#160;protected]</a>
-                    </p>
-                    <span class="count-number fa fa-paper-plane"></span>
-                 </div><!-- single intro text end-->
-                 <div class="border-shap left"></div>
-              </div><!-- col end-->
+        @include('components.indexHeader')
 
-           </div><!-- row end-->
-        </div><!-- container end-->
-        <div class="speaker-shap">
-              <img class="shap2" src="images/shap/home_schedule_memphis1.png" alt="">
-           </div>
-     </section>
-     <!-- ts contact end-->
+        <div id="siteWrapper" class="clearfix">
 
-     <section class="ts-contact-map no-padding">
-        <div class="container-fluid">
-           <div class="row">
-              <div class="col-lg-12 no-padding">
-                 <div class="mapouter">
-                    <div class="gmap_canvas">
-                               <!-- <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Park%20Street%2C%20Jacksonville%2C%20IL%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                   frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
-                                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4238.075542978786!2d-0.14258530106536377!3d50.83163078652512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487585765dd0f7f3%3A0x5a144a31ef19ef9d!2sJurys+Inn+Brighton!5e0!3m2!1sen!2sbd!4v1541576429082" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                   <!-- <a href="https://www.pureblack.de">werbeagentur</a></div> -->
-          
-                 </div>
-              </div>
-           </div>
-        </div>
-     </section>
+            <main id="page" class="aboutPadding" role="main">
+                <div id="content" class="main-content" data-content-field="main-content"
+                    data-collection-id="6113357847dc6168758f265e" data-edit-main-image="Banner">
 
-     <section class="ts-contact-form">
-        <div class="container">
-           <div class="row">
-              <div class="col-lg-8 mx-auto">
-                 <h2 class="section-title text-center">
-                    <span>Have Questions?</span>
-                    Send Message
-                 </h2>
-              </div><!-- col end-->
-           </div>
-           <div class="row">
-              <div class="col-lg-8 mx-auto">
-                 <form id="contact-form" class="contact-form" action="https://demo.themewinter.com/html/exhibz/contact-form.php" method="post">
-                    <div class="error-container"></div>
-                    <div class="row">
-                       <div class="col-md-6">
-                          <div class="form-group">
-                             <input class="form-control form-control-name" placeholder="First Name" name="name" id="f-name"
-                                type="text" required>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                          <div class="form-group">
-                             <input class="form-control form-control-name" placeholder="Last Name" name="name" id="l-name"
-                                type="text" required>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                          <div class="form-group">
-                             <input class="form-control form-control-subject" placeholder="Subject" name="subject" id="subject"
-                                required>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                          <div class="form-group">
-                             <input class="form-control form-control-email" placeholder="Email" name="email" id="email"
-                                type="email" required>
-                          </div>
-                       </div>
+                    <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1681862399851"
+                        id="page-6113357847dc6168758f265e">
+                        <div class="row sqs-row">
+                            <div class="col sqs-col-5 span-5">
+                                <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                                    data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
+                                    id="block-b22d328cb8b60f4e4cba">
+                                    <div class="sqs-block-content">
 
+                                        <div class="sqs-html-content">
+                                            <h2>10100 Santa Monica Blvd, Suite 2300, Los
+                                                Angeles CA 90067</h2>
+                                            <h2>310.272.7000</h2>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="sqs-block button-block sqs-block-button" data-block-type="53"
+                                    id="block-yui_3_17_2_1_1628648855517_12653">
+                                    <div class="sqs-block-content">
+
+                                        <div class="sqs-block-button-container sqs-block-button-container--left"
+                                            data-animation-role="button" data-alignment="left" data-button-size="small"
+                                            data-button-type="tertiary">
+                                            <a href="mailto:communications@management360.com"
+                                                class="sqs-block-button-element--small sqs-button-element--tertiary sqs-block-button-element">
+                                                CONTACT US
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                                    data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
+                                    id="block-yui_3_17_2_1_1681862365746_4011">
+                                    <div class="sqs-block-content">
+
+                                        <div class="sqs-html-content">
+                                            <p class="">Please note, we do not accept
+                                                unsolicited submissions.</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2"
+                                    data-block-type="54" id="block-yui_3_17_2_1_1654665608406_13967">
+                                    <div class="sqs-block-content">
+
+                                        <div
+                                            class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color-white social-icons-size-medium social-icons-style-regular ">
+                                            <style>
+                                                #block-yui_3_17_2_1_1654665608406_13967 .social-icons-style-border .sqs-svg-icon--wrapper {
+
+                                                    box-shadow: 0 0 0 2px inset;
+
+                                                    border: none;
+                                                }
+                                            </style>
+                                            <nav class="sqs-svg-icon--list">
+                                                <a href="https://www.instagram.com/entertainment360/" target="_blank"
+                                                    class="sqs-svg-icon--wrapper instagram-unauth" aria-label="Instagram">
+                                                    <div>
+                                                        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+                                                            <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon">
+                                                            </use>
+                                                            <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask">
+                                                            </use>
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col sqs-col-7 span-7">
+                                <div class="sqs-block map-block sqs-block-map" data-aspect-ratio="104.34027777777777"
+                                    data-block-json="&#123;&quot;location&quot;:&#123;&quot;addressLine1&quot;:&quot;10100 Santa Monica Boulevard&quot;,&quot;addressLine2&quot;:&quot;Los Angeles, CA, 90067&quot;,&quot;addressCountry&quot;:&quot;United States&quot;,&quot;mapLat&quot;:34.0615465,&quot;mapLng&quot;:-118.4165385,&quot;mapZoom&quot;:12,&quot;markerLat&quot;:34.0615465,&quot;markerLng&quot;:-118.4165385,&quot;addressTitle&quot;:&quot;Entertainment 360&quot;&#125;,&quot;vSize&quot;:null,&quot;style&quot;:4,&quot;labels&quot;:true,&quot;terrain&quot;:false,&quot;controls&quot;:false,&quot;aspectRatio&quot;:104.34027777777777&#125;"
+                                    data-block-type="4" id="block-753b3a357fb99dc9a66c">
+                                    <div class="sqs-block-content">&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row sqs-row">
+                            <div class="col sqs-col-12 span-12">
+                                <div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21"
+                                    id="block-a4a43f495879d9edfede">
+                                    <div class="sqs-block-content">&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                       <textarea class="form-control form-control-message" name="message" id="message" placeholder="Your message...*"
-                          rows="6" required></textarea>
-                    </div>
-                    <div class="text-center"><br>
-                       <button class="btn" type="submit"> Send Message</button>
-                    </div>
-                 </form><!-- Contact form end -->
-              </div>
-           </div>
-        </div>
-        <div class="speaker-shap">
-           <img class="shap1" src="images/shap/home_schedule_memphis2.png" alt="">
-        </div>
-       </section>
+                </div>
+            </main>
 
-         <!-- ts footer area start-->
-         @include('components.indexFooter')
-         <!-- ts footer area end-->
-</div>
+            @include('components.indexFooter')
+        </div>
+    </div>
 @endsection

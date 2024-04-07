@@ -6,13 +6,23 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function aboutsuS()
+    public function about()
     {
         return view('home.about');
     }
 
-    public function contactUs()
+    public function contact()
     {
         return view('home.contactUs');
+    }
+
+    public function celebrities()
+    {
+        return view('home.celebrities');
+    }
+
+    public function vipSubscription()
+    {
+        return view('home.becomeAVip');
     }
 }
