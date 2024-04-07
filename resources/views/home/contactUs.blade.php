@@ -10,7 +10,7 @@
         <div id="siteWrapper" class="clearfix">
 
             <main id="page" class="aboutPadding" role="main">
-                <div id="content" class="main-content" data-content-field="main-content"
+                <div id="content" class="main-content mt-5" data-content-field="main-content"
                     data-collection-id="6113357847dc6168758f265e" data-edit-main-image="Banner">
 
                     <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1681862399851"
@@ -23,9 +23,9 @@
                                     <div class="sqs-block-content">
 
                                         <div class="sqs-html-content">
-                                            <h2>10100 Santa Monica Blvd, Suite 2300, Los
+                                            <h2 class="text-white">10100 Santa Monica Blvd, Suite 2300, Los
                                                 Angeles CA 90067</h2>
-                                            <h2>310.272.7000</h2>
+                                            <h2 class="text-white">310.272.7000</h2>
                                         </div>
 
                                     </div>

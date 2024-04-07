@@ -21,7 +21,7 @@
                     <div class="row sqs-row">
                         <div class="col sqs-col-12 span-12">
                             <div class="row sqs-row">
-                                <div class="col sqs-col-11 span-11">
+                                <div class="">
                                     <div class="sqs-block html-block sqs-block-html" data-block-type="2"
                                         data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
                                         id="block-3de9da1a72ade076d0f3">
@@ -46,32 +46,15 @@
                                 id="block-yui_3_17_2_1_1627368510996_32413">
                                 <div class="sqs-block-content">
 
-                                    <div class="image-block-outer-wrapper layout-caption-below
-      design-layout-inline
-      combination-animation-none
-      individual-animation-none
-      individual-text-animation-none
-    "
+                                    <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-none individual-animation-none individual-text-animation-none"
                                         data-test="image-block-inline-outer-wrapper">
 
-                                        <figure class="
-          sqs-block-image-figure
-          intrinsic
-        "
+                                        <figure class=" sqs-block-image-figure intrinsic "
                                             style="max-width:100%;">
 
                                             <div class="image-block-wrapper" data-animation-role="image">
-                                                <div class="sqs-image-shape-container-element
-          
-          has-aspect-ratio
-        "
-                                                    style="
-            position: relative;
-            
-              padding-bottom:52.48276138305664%;
-            
-            overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
-          ">
+                                                <div class="sqs-image-shape-container-element has-aspect-ratio"
+                                                    style="position: relative; padding-bottom:52.48276138305664%; overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);">
 
                                                     <img data-stretch="true"
                                                         data-src="https://images.squarespace-cdn.com/content/v1/60e54653e526b236351f2f2f/993bc52e-d174-42e2-8f75-6a6772e29e6a/Screen+Shot+2022-06-07+at+9.38.24+PM.png"
@@ -91,10 +74,12 @@
 
                                             <figcaption class="image-caption-wrapper">
                                                 <div class="image-caption">
-                                                    <p class=""><em>Directing image from
+                                                    <p class="">
+                                                        <em>Directing image from
                                                             the set of “Walk the Line.” Actor Joaquin Phoenix and Director
                                                             James Mangold sit on set at a diner counter looking at
-                                                            notes.</em></p>
+                                                            notes.</em>
+                                                        </p>
                                                 </div>
                                             </figcaption>
                                         </figure>
@@ -104,14 +89,14 @@
                         </div>
                     </div>
                     <div class="row sqs-row">
-                        <div class="col sqs-col-11 span-11">
+                        <div class="">
                             <div class="sqs-block html-block sqs-block-html" data-block-type="2"
                                 data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
                                 id="block-yui_3_17_2_1_1625727244812_30532">
                                 <div class="sqs-block-content">
 
                                     <div class="sqs-html-content">
-                                        <h2>FOUNDED IN 2002, entertainmenT 360 IS A TALENT AND
+                                        <h2 class="text-white"> FOUNDED IN 2002, entertainmenT 360 IS A TALENT AND
                                             LITERARY MANAGEMENT / PRODUCTION COMPANY BASED IN LOS ANGELES. WE WORK WITH
                                             STORYTELLERS ACROSS THE ENTERTAINMENT INDUSTRY TO HELP PRODUCE AND FOSTER
                                             CONTENT THAT IMPACTS CULTURE, ENTERTAINS, AND INSPIRES.</h2>
@@ -120,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col sqs-col-1 span-1">
+                        <div class="">
                             <div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21"
                                 id="block-yui_3_17_2_1_1625727244812_34250">
                                 <div class="sqs-block-content">&nbsp;</div>
@@ -133,34 +118,15 @@
                                 data-block-type="5" id="block-yui_3_17_2_1_1627368510996_23186">
                                 <div class="sqs-block-content">
 
-                                    <div class="
-      image-block-outer-wrapper
-      layout-caption-below
-      design-layout-inline
-      combination-animation-none
-      individual-animation-none
-      individual-text-animation-none
-    "
+                                    <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-none individual-animation-none individual-text-animation-none "
                                         data-test="image-block-inline-outer-wrapper">
 
-                                        <figure class="
-          sqs-block-image-figure
-          intrinsic
-        "
+                                        <figure class="sqs-block-image-figure intrinsic"
                                             style="max-width:2898px;">
 
                                             <div class="image-block-wrapper" data-animation-role="image">
-                                                <div class="sqs-image-shape-container-element
-        
-          has-aspect-ratio
-        "
-                                                    style="
-            position: relative;
-            
-              padding-bottom:52.37154006958008%;
-            
-            overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
-          ">
+                                                <div class="sqs-image-shape-container-elementhas-aspect-ratio"
+                                                    styl position: relative; padding-bottom:52.37154006958008%; overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);">
 
                                                     <img data-stretch="false"
                                                         data-src="https://images.squarespace-cdn.com/content/v1/60e54653e526b236351f2f2f/90903321-6d9c-42af-ae4f-da618102f88d/Screen+Shot+2022-06-07+at+9.41.49+PM.png"
@@ -193,14 +159,14 @@
                                 </div>
                             </div>
                             <div class="row sqs-row">
-                                <div class="col sqs-col-11 span-11">
+                                <div class="">
                                     <div class="sqs-block html-block sqs-block-html" data-block-type="2"
                                         data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
                                         id="block-yui_3_17_2_1_1627368510996_25531">
                                         <div class="sqs-block-content">
 
                                             <div class="sqs-html-content">
-                                                <h2>AS MANAGERS, WE REPRESENT AN
+                                                <h2 class="text-white"> AS MANAGERS, WE REPRESENT AN
                                                     EXTRAORDINARY ROSTER OF AWARD-WINNING WRITERS, DIRECTORS, ACTORS, and
                                                     CREATORS USING A COLLABORATIVE AND INNOVATIVE APPROACH TAILORED TO THE
                                                     CONSTANTLY EVOLVING NATURE OF OUR INDUSTRY. WE ARE COMMITTED TO
@@ -215,14 +181,7 @@
                                         id="block-yui_3_17_2_1_1654662953670_34465">
                                         <div class="sqs-block-content">
 
-                                            <div class="
-      image-block-outer-wrapper
-      layout-caption-below
-      design-layout-inline
-      combination-animation-none
-      individual-animation-none
-      individual-text-animation-none
-    "
+                                            <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-none individual-animation-none individual-text-animation-none "
                                                 data-test="image-block-inline-outer-wrapper">
 
                                                 <figure class=" sqs-block-image-figure intrinsic" style="max-width:2900px;">
@@ -258,14 +217,14 @@
                                         </div>
                                     </div>
                                     <div class="row sqs-row">
-                                        <div class="col sqs-col-10 span-10">
+                                        <div class="">
                                             <div class="sqs-block html-block sqs-block-html" data-block-type="2"
                                                 data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;"
                                                 id="block-yui_3_17_2_1_1654662953670_37082">
                                                 <div class="sqs-block-content">
 
                                                     <div class="sqs-html-content">
-                                                        <h2>As producers, we are trusted
+                                                        <h2 class="text-white"> As producers, we are trusted
                                                             partners and advocates for artists represented by our company
                                                             and beyond. Our past work has received numerous accolades,
                                                             including Emmy Awards, Golden Globe Awards, and Academy Awards.

@@ -38,7 +38,9 @@
                               </h3>
                            </div>
                            <div class="ts-pricing-progress">
-                              <p class="amount-progres-text">Available tickets for this price</p>
+                              <p class="amount-progres-text"><i class='bx bx-package'></i> Access to exclusive celebrity news and updates.</p>
+                              <p> <i class='bx bx-package'></i> Monthly newsletter with insider information.</p>
+                              <p><i class='bx bx-package'></i> Ideal for: Casual fans who want regular updates on their favorite celebrities.</p>
                               <div class="ts-progress">
                                  <div class="ts-progress-inner" style="width: 100%"></div>
                               </div>
@@ -65,7 +67,10 @@
                               </h3>
                            </div>
                            <div class="ts-pricing-progress">
-                              <p class="amount-progres-text">Available tickets for this price</p>
+                              <p class="amount-progres-text"><i class='bx bx-package'></i> Includes all Basic features, plus:</p>
+                              <p> <i class='bx bx-package'></i> Exclusive behind-the-scenes content not available to the public.</p>
+                              <p><i class='bx bx-package'></i> Priority access to celebrity events and meet-and-greets.</p>
+                              <p><i class='bx bx-package'></i> Ideal for: Fans who want more behind-the-scenes access and opportunities to interact with celebrities.</p>
                               <div class="ts-progress">
                                  <div class="ts-progress-inner" style="width: 75%"></div>
                               </div>
@@ -92,7 +97,10 @@
                               </h3>
                            </div>
                            <div class="ts-pricing-progress">
-                              <p class="amount-progres-text">Available tickets for this price</p>
+                              <p> <i class='bx bx-package'></i> Includes all Gold features, plus:</p>
+                              <p><i class='bx bx-package'></i> Virtual meet-and-greets with celebrities via video chat.</p>
+                              <p><i class='bx bx-package'></i> Access to limited edition fan merchandise and collectibles.</p>
+                              <p><i class='bx bx-package'></i> Ideal for: Superfans who want direct interactions with celebrities and access to exclusive fan merchandise.</p>
                               <div class="ts-progress">
                                  <div class="ts-progress-inner" style="width: 50%"></div>
                               </div>
