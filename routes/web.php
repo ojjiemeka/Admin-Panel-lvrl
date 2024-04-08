@@ -22,6 +22,7 @@ Route::get('/about', [App\Http\Controllers\PagesController::class, 'about'])->na
 Route::get('/contact', [App\Http\Controllers\PagesController::class, 'Contact'])->name('contactUs');
 Route::get('/celebrities', [App\Http\Controllers\PagesController::class, 'celebrities'])->name('celebrities');
 Route::get('/vip-subscription', [App\Http\Controllers\PagesController::class, 'vipSubscription'])->name('vip-subscription');
+Route::get('/booking', [App\Http\Controllers\PagesController::class, 'booking'])->name('bookings');
 
 Route::resource('celebs', CelebController::class);
 

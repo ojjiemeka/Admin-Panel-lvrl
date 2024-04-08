@@ -25,4 +25,9 @@ class PagesController extends Controller
     {
         return view('home.becomeAVip');
     }
+
+    public function booking()
+    {
+        return view('home.bookings');
+    }
 }
