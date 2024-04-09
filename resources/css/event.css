@@ -10,3 +10,9 @@
 .gold{
     color: #d8b707;
 }
+
+.bookingCard{
+    border: 2px solid #000;
+    padding: 20px 10px;
+
+}

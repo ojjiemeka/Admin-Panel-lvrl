@@ -24,12 +24,11 @@ Route::get('/celebrities', [App\Http\Controllers\PagesController::class, 'celebr
 Route::get('/vip-subscription', [App\Http\Controllers\PagesController::class, 'vipSubscription'])->name('vip-subscription');
 Route::get('/booking', [App\Http\Controllers\PagesController::class, 'booking'])->name('bookings');
 
-Route::resource('celebs', CelebController::class);
-
-Route::resource('prices', PricesController::class);
 
 
+Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mailer', [App\Http\Controllers\HomeController::class, 'createMail'])->name('createMail');
-Auth::routes();
+Route::resource('celebs', CelebController::class);
+Route::resource('prices', PricesController::class);
 

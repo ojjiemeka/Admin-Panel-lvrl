@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('gender');
             $table->string('bio');
+            $table->string('img');
             $table->boolean('status');
 
         });

@@ -78,7 +78,7 @@
                            </div>
                            <div class="promotional-code">
                               <p class="promo-code-text">Enter Promotional Code</p>
-                              <a href="#" class="btn pricing-btn">Buy Ticket</a>
+                              <a href="#popup_1" class="btn pricing-btn">Buy Ticket</a>
                               <p class="vate-text">All prices exclude 25% VAT</p>
                            </div>
                         </div><!-- ts pricing box-->
@@ -108,11 +108,101 @@
                            </div>
                            <div class="promotional-code">
                               <p class="promo-code-text">Enter Promotional Code</p>
-                              <a href="#" class="btn pricing-btn">Buy Ticket</a>
+                              <a href="#popup_1" class="btn pricing-btn view-speaker ts-image-popup" data-effect="mfp-zoom-in">Buy Ticket</a>
+                                 
                               <p class="vate-text">All prices exclude 25% VAT</p>
                            </div>
                         </div><!-- ts pricing box-->
                         <img class="pricing-dot1 " src="{{asset('eventBooking/images/pricing/dot.png')}}" alt="">
+
+                        <div id="popup_1" class="container ts-speaker-popup mfp-hide">
+                           <div class="row">
+                              <div class="col-lg-12 mx-auto">
+                        
+                                 <div class="error-container"></div>
+                                 <div class="row bookingCard">
+                                   <div>
+                                       <h3 class="ts-title">
+                                           Tell us about Yourself/Organization
+                                       </h3>
+                                   </div>
+                                    <div class="col-md-12">
+                                       <div class="form-group">
+                                           <label required for="date">Full Name</label>
+                                          <input class="form-control form-control-name" placeholder="eg: Sylvester Stallone" name="full_name" id="f-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Job Title</label>
+                                          <input class="form-control form-control-name" placeholder="Job Title" name="job_title" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Sex</label>
+                                           <select required class="form-control" name="gender" id="" required>
+                                               <option disabled selected>Select Gender*</option>
+                                               <option value="M">
+                                                  Male
+                                               </option>
+                                               <option value="F">
+                                                  Female
+                                               </option>
+                                               <option value="Zombie">
+                                                  Specify in Decsription
+                                               </option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Phone number</label>
+                                          <input class="form-control form-control-name" placeholder="Phone Number" name="phone_number" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Email</label>
+                                          <input class="form-control form-control-name" placeholder="Email" name="email" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Address</label>
+                                          <input class="form-control form-control-name" placeholder="Apt 123 Str 456" name="street_address" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Zip Code</label>
+                                          <input class="form-control form-control-name" placeholder="eg: 10001" name="zip_code" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Country</label>
+                                          <input class="form-control form-control-name" placeholder="Country" name="country" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                           <label required for="date">Nearest Landmark</label>
+                                          <input class="form-control form-control-name" placeholder="eg: Airport" name="nearest_airport" id="l-name"
+                                             type="text" required>
+                                       </div>
+                                    </div>
+                                 </div>
+                           </div>
+                           </div><!-- row end-->
+                       </div>
                      </div>
                   </div><!-- col end-->
                </div>

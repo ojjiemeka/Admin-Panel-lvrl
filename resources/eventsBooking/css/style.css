@@ -2475,12 +2475,14 @@ img.pull-right {
 /* Page banner area */
 .bookTxt{
   color: #efc940;
-  font-size: 10em;
-  line-height: 1.1 !important;
-  text-transform: uppercase !important;
-  text-align: center;
-  font-family: Storytella, sans-serif;
-  letter-spacing: -0.02em;
+  font-size: 2em;
+    font-weight: 800;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
 }
 .bannerTxt{
   font-size: 8em !important;

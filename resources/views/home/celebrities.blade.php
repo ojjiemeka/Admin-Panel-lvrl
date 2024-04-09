@@ -110,10 +110,7 @@
                                         <span class="speakder-designation">Actor</span>
                                         <span class="speakder-designation">Comedian</span>
                                        </div>
-                                        <img class="company-logo"
-                                            src="{{ asset('eventBooking/images/sponsors/sponsor-6.png') }}"
-                                            alt="">
-                                        <button class="btn"> Book Now</button>
+                                        <a href="{{route('bookings')}}" class="bookTxt">Book Now</a>
                                     </div><!-- ts-speaker-popup-content end-->
                                 </div><!-- col end-->
                             </div><!-- row end-->

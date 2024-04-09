@@ -9,9 +9,9 @@ import '../libs/jquery-steps/build/jquery.steps.min.js';
 import '../js/pages/form-wizard.init.js';
 
 import '../libs/bootstrap-editable/js/index.js';
-// import '../libs/moment/min/moment.min.js';
+import '../libs/select2/js/select2.min.js';
 import './pages/form-xeditable.init.js';     
-
+import './pages/form-advanced.init.js';     
 
 // import '';
 
