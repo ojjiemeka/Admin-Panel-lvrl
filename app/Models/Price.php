@@ -9,11 +9,14 @@ class Price extends Model
 {
     use HasFactory;
 
-    protected $table = 'price';
+    protected $table = 'prices';
 
     protected $fillable = [
         'amount',
         'desc',
         'status',
     ];
+
+    public $timestamps = false;
+
 }

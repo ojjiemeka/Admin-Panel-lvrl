@@ -5,23 +5,52 @@ namespace App\Http\Controllers;
 use App\Models\Celebrity;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Session;
+use Exception;
+use Carbon\Carbon;
+use Illuminate\Contracts\Support\ValidatedData;
 
 class CelebController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
+    private function getAllCelebs()
+    {
+        return Celebrity::all();
+    }
 
     public function index()
     {
+        $calculateAge = function ($dateOfBirth) {
+            return Carbon::parse($dateOfBirth)->age;
+        };
 
-        // $countries = $this->countries();
+        $celebsList = $this->getAllCelebs();
+        
+        try {
+            // Call the countries() function to get the country names
+            $countries = countries();
 
-        // echo $countries;
-        // return "hello world";
-        return view('pages.viewCeleb', [
-            'countries', $countries
-        ]);
+            // Pass the $countries variable to the view
+            return view('pages.viewCeleb', [
+                'countries'     => $countries,
+                'celebsList'    => $celebsList,
+                'calculateAge'  => $calculateAge
+            ]);
+        } catch (Exception $e) {
+            // Handle the exception and return a custom error message
+            $errorMessage = $e->getMessage();
+            return view('pages.viewCeleb', [
+                'errorMessage' => $errorMessage,
+                'celebsList'    => $celebsList,
+                'calculateAge'  => $calculateAge
+            ]);
+        }
     }
 
     /**
@@ -39,7 +68,7 @@ class CelebController extends Controller
     {
         // Validate the request data
         $validatedData = $request->validate([
-            'full_name' => 'required',
+            'fullname' => 'required',
             'date_of_birth' => 'required',
             'category' => 'required',
             'country' => 'required',
@@ -49,32 +78,34 @@ class CelebController extends Controller
             // Add validation rules for other fields
         ]);
 
+        // Manually add the 'status' field with value 1
+        $validatedData['status'] = 1;
+
         // Check if the information already exists
-        $existingRecord = Celebrity::where('acc_id', $validatedData['acc_id'])->first();
+        $existingRecord = Celebrity::where('fullname', $validatedData['fullname'])->first();
 
         if ($existingRecord) {
             // Information already exists, you can handle it as per your requirements
-            // Alert::error('Error', 'User already has a balance');
-            // return redirect()->route('balances.index');
-            echo "User already has a balance";
+            return redirect()->back()->with('error', 'Celeb already exists.');
         }
 
         // Create a new instance of your model and fill it with the validated data
         $model = new Celebrity();
         $model->fill($validatedData);
 
+        if ($model->save()) {
+            // Model saved successfully, flash a success message
+            Session::flash('success', 'Data has been successfully stored.');
+            return redirect()->back();
+        } else {
+            // Model failed to save, flash an error message
+            Session::flash('error', 'Failed to store data. Please try again.');
+            return redirect()->back();
+        }
         // echo $this->message;
-        dd($model);
+        // dd($model);
         // $store = $model->save();
 
-        // if (!$store) {
-        // Alert::error('Error', 'Something went wrong');
-
-        //     return redirect()->route('balances.index');
-        // }
-
-        // Alert::success('Success', 'Balance has been created!!');
-        // return redirect()->route('balances.index');
     }
 
     /**
@@ -98,7 +129,38 @@ class CelebController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Celebrity::find($id);
+
+        //  Validate the request data
+        $validatedData = $request->validate([
+            'fullname' => 'required',
+            'date_of_birth' => 'required',
+            'category' => 'required',
+            'country' => 'required',
+            'gender' => 'required',
+            'bio' => 'required',
+            // 'img' => 'required'
+            // Add validation rules for other fields
+        ]);
+
+        // dd($validatedData);
+
+        // Update the celebrity record with the validated data
+        $data->update($validatedData);
+
+        if ($data->update($validatedData)) {
+            // Model saved successfully, flash a success message
+            Session::flash('success', 'Celebrity information has been successfully updated.');
+            return redirect()->back();
+        } else {
+            // Model failed to save, flash an error message
+            Session::flash('error', 'Failed to store data. Please try again.');
+            return redirect()->back();
+        }
+
+    // Flash a success message and redirect back
+        
+
     }
 
     /**
@@ -106,6 +168,14 @@ class CelebController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Celebrity::find($id);
+
+        // dd($data);
+
+        $data->delete();
+
+             Session::flash('success', 'Celebrity information has been successfully deleted.');
+            return redirect()->back();
+        
     }
 }

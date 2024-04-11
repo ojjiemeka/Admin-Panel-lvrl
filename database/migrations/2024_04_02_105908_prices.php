@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->string('amount');
-            $table->date('desc');
+            $table->string('desc');
             $table->boolean('status');
         });
     }

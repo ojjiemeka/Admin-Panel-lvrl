@@ -12,13 +12,15 @@ class Celebrity extends Model
     protected $table = 'celebrities';
 
     protected $fillable = [
-        'full_name',
+        'fullname',
         'date_of_birth',
         'category',
         'country',
         'gender',
         'bio',
-        'img',
+        // 'img',
         'status',
     ];
+
+    public $timestamps = false;
 }

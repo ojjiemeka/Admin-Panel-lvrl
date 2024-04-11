@@ -3,90 +3,10 @@
 @section('content')
     @include('components.header')
     <div class="main-content">
-<<<<<<< HEAD
 
         <div class="page-content">
             <div class="container-fluid">
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Form Xeditable</h4>
-
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                    <li class="breadcrumb-item active">Form Xeditable</li>
-                                </ol>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- end page title -->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <h4 class="card-title">Inline Example</h4>
-                                <p class="card-title-desc">This library allows you to create
-                                    editable elements on your page. It can be used with any engine
-                                    (bootstrap, jquery-ui, jquery only) and includes both popup and inline
-                                    modes. Please try out demo to see how it works.</p>
-
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-nowrap mb-0">
-                                        <thead>
-                                        <tr>
-                                            <th style="width: 50%;">Inline</th>
-                                            <th>Examples</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Simple Text Field</td>
-                                            <td>
-                                                <a href="javascript: void(0);" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Empty text field, required</td>
-                                            <td>
-                                                <a href="javascript: void(0);" id="inline-firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Select, local array, custom display</td>
-                                            <td>
-                                                <a href="javascript: void(0);" id="inline-sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Combodate</td>
-                                            <td>
-                                                <a href="javascript: void(0);" id="inline-dob" data-type="combodate" data-value="2015-09-24" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Textarea, buttons below. Submit by ctrl+enter</td>
-                                            <td>
-                                                <a href="javascript: void(0);" id="inline-comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a>
-                                            </td>
-                                        </tr>
-    
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-
-                            </div>
-                        </div>
-                    </div> <!-- end col -->
-                </div> <!-- end row -->
-=======
         <div class="page-content">
             <div class="container-fluid">
                 <!-- start page title -->
@@ -121,23 +41,105 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach ($prices as $key => $price)
                                                 <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td data-field="id" style="width: 80px">{{ $key + 1 }}</td>
+                                                    <td>{{$price->amount}}</td>
+                                                    <td>{{$price->desc}}</td>
+                                                    <td>{{$price->status}}</td>
                                                     <td class="d-flex justify-content-between w-lg">
                                                         <div class="square-switch">
-                                                            <input type="checkbox" id="square-switch1" switch="none"
-                                                                checked />
-                                                            <label for="square-switch1" data-on-label="On"
+                                                            <input type="checkbox" id="square-switch{{ $key + 1 }}"
+                                                                switch="none" checked />
+                                                            <label for="square-switch{{ $key + 1 }}" data-on-label="On"
                                                                 data-off-label="Off"></label>
                                                         </div>
                                                         <div>
-                                                            <i class="bx bx-sm bx-trash text-danger"></i>
+                                                            <a class="bx bx-sm bxs-edit" data-bs-toggle="modal" data-bs-target="#editModal{{ $price->id }}"></a>
+                                                        </div>
+                                                        <div class="modal fade bs-example-modal-center" id="editModal{{ $price->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Edit Info</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <form action="{{ route('prices.update', $price->id) }}" method="POST" enctype="file">
+                                                                            @csrf
+                                                                             @method('PUT')
+                                                                             <div class="form-group row mb-3">
+                                                                                <label for="amount" class="col-form-label col-lg-12">Amount</label>
+                                                                                <div class="col-lg-10">
+                                                                                    <input id="taskname" name="amount" type="text" class="form-control"
+                                                                                        value="{{$price->amount}}">
+                                                                                </div>
+                                                                            </div>
+                                            
+                                                                            {{-- <div class="form-group row mb-3">
+                                                                                <label for="desc" class="col-form-label col-lg-12">Description</label>
+                                                                                <div class="col-lg-10">
+                                                                                    <input id="taskname" name="desc" type="text" class="form-control"
+                                                                                        placeholder="Enter Task Name...">
+                                                                                </div>
+                                                                            </div> --}}
+                                        
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="formrow-inputState" class="form-label">Description</label>
+                                                                                        <select id="formrow-inputState" class="form-select" name="desc">
+                                                                                            <option>Selected: {{$price->desc}}</option>
+                                                                                            <option>fancard</option>
+                                                                                            <option>subscription</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                        
+                                                                            <div>
+                                                                                <button type="submit" class="btn btn-primary w-md">Update</button>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div><!-- /.modal-content -->
+                                                            </div><!-- /.modal-dialog -->
+                                                        </div>
+
+                                                        <div>
+                                                            <a class="bx bx-sm bx-trash text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $price->id  }}"></a>
+                                                        </div>
+                                                        
+                                                        <div class="modal fade" id="deleteModal{{ $price->id  }}">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Delete</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Are you sure you want to delete {{ $price->amount }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary light btn-sm"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                    
+                                                                        <form action="{{ route('prices.destroy', $price->id ) }}" method="POST">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                                                Delete
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -149,45 +151,53 @@
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title mb-3">Publish Price</h5>
-
-                                <div class="form-group row mb-4">
-                                    <label for="taskname" class="col-form-label col-lg-12">Price</label>
-                                    <div class="col-lg-10">
-                                        <input id="taskname" name="taskname" type="text" class="form-control"
-                                            placeholder="Enter Task Name...">
+                                <h5 class="card-title mb-3">Publish Pricing</h5>
+                                <form action="{{route('prices.store')}}" method="post">
+                                    @csrf
+                                    <div class="form-group row mb-4">
+                                        <label for="amount" class="col-form-label col-lg-12">Amount</label>
+                                        <div class="col-lg-10">
+                                            <input id="taskname" name="amount" type="text" class="form-control"
+                                                placeholder="Enter Amount...">
+                                        </div>
                                     </div>
-                                </div>
+    
+                                    {{-- <div class="form-group row mb-4">
+                                        <label for="desc" class="col-form-label col-lg-12">Description</label>
+                                        <div class="col-lg-10">
+                                            <input id="taskname" name="desc" type="text" class="form-control"
+                                                placeholder="Enter Task Name...">
+                                        </div>
+                                    </div> --}}
 
-                                <div class="form-group row mb-4">
-                                    <label for="taskname" class="col-form-label col-lg-12">Description</label>
-                                    <div class="col-lg-10">
-                                        <input id="taskname" name="taskname" type="text" class="form-control"
-                                            placeholder="Enter Task Name...">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="formrow-inputState" class="form-label">Description</label>
+                                                <select id="formrow-inputState" class="form-select" name="desc">
+                                                    <option>Select Type</option>
+                                                    <option>fancard</option>
+                                                    <option>subscription</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div>
-                                    <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                </div>
+    
+                                    <div>
+                                        <button type="submit" class="btn btn-primary w-md">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                             <!-- end card body -->
                         </div>
                     </div>
                 </div>
                 <!-- end row -->
->>>>>>> f3aad89ea20df3fc0b7571575eea512a65373124
-
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-<<<<<<< HEAD
-
     </div>
-=======
     </div>
-
->>>>>>> f3aad89ea20df3fc0b7571575eea512a65373124
-    @include('components.footer')
+        @include('components.footer')
     </div>
 @endsection
