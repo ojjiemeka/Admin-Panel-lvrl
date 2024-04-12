@@ -25,97 +25,31 @@
                     </div><!-- col end-->
                 </div><!-- row end-->
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    @foreach ($celebs as $key => $celeb)
+                    <div class="col-lg-4 col-md-6">
                         <div class="ts-speaker">
                             <div class="speaker-img">
-                                <img class="img-fluid" src="{{ asset('eventBooking/images/speakers/speaker2.jpg') }}"
-                                    alt="">
-                                <a href="#popup_2" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
-                                    <i class="icon icon-plus"></i>
+                                <img class="img-fluid" src="{{ $celeb->img }}"alt="">
+                                <a class="view-speaker ts-image-popup">
+                                    <i class="icon icon-plus">
+                                    </i>
                                 </a>
                             </div>
                             <div class="ts-speaker-info">
-                                <h3 class="ts-title"><a href="#">Melisa Lundryn</a></h3>
+                                <h3 class="ts-title">
+                                    {{-- <a href="#" class=" booking-link" data-fullname="{{ $celeb->fullname }}" data-img="{{ $celeb->img }}">{{ $celeb->fullname }}</a> --}}
+                                    <form action="{{ route('bookings', $celeb->id) }}" method="GET">
+                                        @csrf
+                                        <button type="submit" class="b-none">{{ $celeb->fullname }}</button>
+                                    </form>
+                                </h3>
                                 <p>
-                                    Lead Designer, Payol
+                                    {{ $celeb->category }}
                                 </p>
                             </div>
                         </div>
-                        <!-- popup start-->
-                        <div id="popup_2" class="container ts-speaker-popup mfp-hide">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="ts-speaker-popup-img">
-                                        <img src="{{ asset('eventBooking/images/speakers/speaker2.jpg') }}"
-                                            alt="">
-                                    </div>
-                                </div><!-- col end-->
-                                <div class="col-lg-6">
-                                    <div class="ts-speaker-popup-content">
-                                        <h3 class="ts-title">David Robert</h3>
-                                        <div class="mb-2">
-                                            <i class='bx bxs-star gold'></i>
-                                        <i class='bx bxs-star gold'></i>
-                                        <i class='bx bxs-star gold'></i>
-                                        <i class='bx bxs-star gold'></i>
-                                        <i class='bx bxs-star gold'></i>
-                                        </div>
-                                        <span class="speakder-designation">Born</span>
-                                        <span class="speakder-designation">Country</span>
-                                        <div class="widget asq-form">
-                                            <form action="#" method="POST"  class="ts-form">
-                                               <input type="text" class="form-control" name="name" placeholder="Your Name" id="ts_contact_name">
-                                               <input type="email" class="form-control" name="email" placeholder="Your Email" id="ts_contact_email">
-                                               <textarea name="massage" placeholder="Your Question" id="x_contact_massage" class="form-control message-box"
-                                                  cols="30" rows="10"></textarea>
-                                               <div class="ts-btn-wraper">
-                                                  <input type="submit" class="btn" id="ts_contact_submit" value="SEND QUESTION">
-                                               </div>
-                                            </form>
-                                         </div>
-                                    </div><!-- ts-speaker-popup-content end-->
-                                </div><!-- col end-->
-                            </div><!-- row end-->
-                        </div><!-- popup end-->
                     </div> <!-- col end-->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="ts-speaker">
-                            <div class="speaker-img">
-                                <img class="img-fluid" src="{{ asset('eventBooking/images/speakers/speaker3.jpg') }}"
-                                    alt="">
-                                <a href="#popup_3" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
-                                    <i class="icon icon-plus"></i>
-                                </a>
-                            </div>
-                            <div class="ts-speaker-info">
-                                <h3 class="ts-title"><a href="#">Agaton Johnsson</a></h3>
-                                <p>
-                                    Developer Expert
-                                </p>
-                            </div>
-                        </div>
-                        <!-- popup start-->
-                        <div id="popup_3" class="container ts-speaker-popup mfp-hide">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="ts-speaker-popup-img">
-                                        <img src="{{ asset('eventBooking/images/speakers/speaker3.jpg') }}"
-                                            alt="">
-                                    </div>
-                                </div><!-- col end-->
-                                <div class="col-lg-6">
-                                    <div class="ts-speaker-popup-content">
-                                        <h3 class="ts-title">David Robert</h3>
-                                       <div>
-                                        <span class="speakder-designation">Actor</span>
-                                        <span class="speakder-designation">Comedian</span>
-                                       </div>
-                                        <a href="{{route('bookings')}}" class="bookTxt">Book Now</a>
-                                    </div><!-- ts-speaker-popup-content end-->
-                                </div><!-- col end-->
-                            </div><!-- row end-->
-                        </div><!-- popup end-->
-                    </div>  <!-- col end-->
+                    @endforeach
                 </div><!-- row end-->
             </div><!-- container end-->
 
@@ -133,4 +67,36 @@
         @include('components.indexFooter')
         <!-- ts footer area end-->
      </div>
+
+     {{-- <script>
+        // JavaScript to handle clicking on the booking link
+        document.querySelectorAll('.booking-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const fullname = this.getAttribute('data-fullname');
+                const img = this.getAttribute('data-img');
+                // Make an AJAX request to the bookings route
+                fetch('{{ route("bookings") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ fullname: fullname, img: img })
+                })
+                .then(response => {
+                    // Handle the response as needed
+                    if (response.ok) {
+                        // Redirect to the bookings page
+                        window.location.href = '{{ route("bookings") }}';
+                    } else {
+                        // Handle error response
+                        console.error('Error:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script> --}}
 @endsection

@@ -75,7 +75,7 @@
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form action="{{ route('celebs.update', $celeb->id) }}" method="POST" enctype="file">
+                                                                        <form action="{{ route('celebs.update', $celeb->id) }}" method="POST" enctype="multipart/form-data">
                                                                             @csrf
                                                                              @method('PUT')
                                                                             <div class="mb-3">
@@ -142,9 +142,9 @@
                                                                             </div>
                                         
                                                                             <div class="row">
-                                                                                <div class="mb-3 col-lg-2">
-                                                                                    <label for="resume">Resume</label>
-                                                                                    <input type="file" class="form-control" id="resume">
+                                                                                <div class="mb-3 col-lg-12">
+                                                                                    <label for="resume">Current Image: {{ $celeb->img }}</label>
+                                                                                    <input type="file" name="img" class="form-control" id="resume">
                                                                                 </div>
                                                                             </div>
                                                                             <div>
@@ -203,7 +203,7 @@
                             <div class="card-body" id="addMenu">
                                 <h4 class="card-title mb-4">Quick Add</h4>
 
-                                <form action="{{ route('celebs.store') }}" method="POST" enctype="file">
+                                <form action="{{ route('celebs.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Full Name</label>
@@ -273,9 +273,9 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 col-lg-2">
+                                        <div class="mb-3 col-lg-12">
                                             <label for="resume">Resume</label>
-                                            <input type="file" class="form-control" id="resume">
+                                            <input type="file" name="img" class="form-control" id="resume">
                                         </div>
                                     </div>
                                     <div>

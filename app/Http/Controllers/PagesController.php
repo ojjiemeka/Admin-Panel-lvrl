@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Celebrity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Exception;
+
 
 class PagesController extends Controller
 {
@@ -18,7 +22,11 @@ class PagesController extends Controller
 
     public function celebrities()
     {
-        return view('home.celebrities');
+        $celebs =   $this->getAllCelebs();
+
+        return view('home.celebrities', [
+            'celebs'    =>  $celebs
+        ]);
     }
 
     public function vipSubscription()
@@ -26,8 +34,27 @@ class PagesController extends Controller
         return view('home.becomeAVip');
     }
 
-    public function booking()
+    public function booking(string $id)
     {
-        return view('home.bookings');
+        $data = Celebrity::find($id);
+
+        // dd($data);
+        try {
+            // Call the countries() function to get the country names
+            $countries = countries();
+
+            // Pass the $countries variable to the view
+            return view('home.bookings', [
+                'data'          => $data,
+                 'countries'        => $countries,
+                ]);
+        } catch (Exception $e) {
+            // Handle the exception and return a custom error message
+            $errorMessage = $e->getMessage();
+            return view('home.bookings', [
+                'data'          => $data,
+                'countries'     => $countries,
+                ]);
+        }
     }
 }

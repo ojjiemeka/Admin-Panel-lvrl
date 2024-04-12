@@ -19,10 +19,6 @@ class CelebController extends Controller
     /**
      * Display a listing of the resource.
      */
-    private function getAllCelebs()
-    {
-        return Celebrity::all();
-    }
 
     public function index()
     {
@@ -31,7 +27,7 @@ class CelebController extends Controller
         };
 
         $celebsList = $this->getAllCelebs();
-        
+
         try {
             // Call the countries() function to get the country names
             $countries = countries();
@@ -74,12 +70,17 @@ class CelebController extends Controller
             'country' => 'required',
             'gender' => 'required',
             'bio' => 'required',
-            // 'img' => 'required'
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Add validation for the image
             // Add validation rules for other fields
         ]);
 
+        // dd($validatedData);
+
         // Manually add the 'status' field with value 1
         $validatedData['status'] = 1;
+
+        // Handle image upload using the helper function
+        $imagePath = uploadImage($request->file('img'));
 
         // Check if the information already exists
         $existingRecord = Celebrity::where('fullname', $validatedData['fullname'])->first();
@@ -92,6 +93,7 @@ class CelebController extends Controller
         // Create a new instance of your model and fill it with the validated data
         $model = new Celebrity();
         $model->fill($validatedData);
+        $model->img = $imagePath;
 
         if ($model->save()) {
             // Model saved successfully, flash a success message
@@ -130,7 +132,7 @@ class CelebController extends Controller
     public function update(Request $request, string $id)
     {
         $data = Celebrity::find($id);
-
+        
         //  Validate the request data
         $validatedData = $request->validate([
             'fullname' => 'required',
@@ -139,11 +141,20 @@ class CelebController extends Controller
             'country' => 'required',
             'gender' => 'required',
             'bio' => 'required',
-            // 'img' => 'required'
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Add validation for the image
             // Add validation rules for other fields
         ]);
+        
+        // dd($validatedData);
 
         // dd($validatedData);
+        if ($request->hasFile('img')) {
+            // Dump and die the image name before saving
+            // dd($request->file('img')->getClientOriginalName());
+            
+            $imagePath = uploadImage($request->file('img'));
+            $validatedData['img'] = $imagePath;
+        }
 
         // Update the celebrity record with the validated data
         $data->update($validatedData);
@@ -158,8 +169,11 @@ class CelebController extends Controller
             return redirect()->back();
         }
 
-    // Flash a success message and redirect back
-        
+        // Redirect back
+        return redirect()->back();
+
+        // Flash a success message and redirect back
+
 
     }
 
@@ -174,8 +188,7 @@ class CelebController extends Controller
 
         $data->delete();
 
-             Session::flash('success', 'Celebrity information has been successfully deleted.');
-            return redirect()->back();
-        
+        Session::flash('success', 'Celebrity information has been successfully deleted.');
+        return redirect()->back();
     }
 }

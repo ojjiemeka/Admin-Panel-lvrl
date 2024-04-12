@@ -12,17 +12,12 @@
 
                 <div class="row">
                     @foreach ($celebsList as $key => $celeb)
-                    <div class="col-xl-4 col-sm-6">
+                    <div class="col-xl-4 col-sm-4">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <div class="flex-shrink-0 me-4">
-                                        <div class="avatar-md">
-                                            <span class="avatar-title rounded-circle bg-light text-danger font-size-16">
-                                                <img src="assets/images/companies/img-1.png" alt="" height="30">
-                                                hi
-                                            </span>
-                                        </div>
+                                    <div class="flex-shrink-0 me-4 w-50">
+                                        <img src="{{$celeb->img}}" class="cusWdth" alt="">
                                     </div>
 
 
@@ -37,7 +32,11 @@
                             <div class="px-4 py-3 border-top">
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item me-3">
-                                        <span class="badge bg-success">{{ $celeb->status }}</span>
+                                        @if (($celeb->status == 1))
+                                            <span class="badge bg-success">Active</span>
+                                        @else
+                                            <span class="badge bg-danger">Inactive</span>                                      
+                                        @endif
                                     </li>
                                     <li class="list-inline-item me-3">
                                         <i class= "bx bx-calendar me-1"></i> {{ $calculateAge($celeb->date_of_birth) }}

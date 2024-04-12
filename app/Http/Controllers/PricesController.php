@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Session;
 
 class PricesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     private function getPrices()
     {
         return Price::all();

@@ -19,11 +19,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    private function getAllCelebs()
-    {
-        return Celebrity::all();
-    }
-
     /**
      * Show the application dashboard.
      *

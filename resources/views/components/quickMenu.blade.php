@@ -24,6 +24,11 @@
                         </a>
                     </div>
                     <div>
+                        <a href="{{route('fancards.index')}}">
+                            <i class='bx bx-lg bxs-id-card text-warning'></i>
+                        </a>
+                    </div>
+                    <div>
                         <a href="{{route('prices.index')}}" >
                             <i class="bx bx-lg bxs-dollar-circle text-success"></i>
                         </a>

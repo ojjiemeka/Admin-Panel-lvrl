@@ -96,6 +96,7 @@ h5 {
 
 /* Global styles
 ================================================== */
+
 html {
   overflow-x: hidden !important;
   width: 100%;
@@ -1258,7 +1259,7 @@ img.pull-right {
     margin-bottom: 60px; }
     .speaker-classic .ts-speaker .speaker-img {
       width: 100%;
-      height: auto;
+      /* height: auto; */
       border-radius: 0;
       -webkit-border-radius: 0;
       -ms-border-radius: 0; }

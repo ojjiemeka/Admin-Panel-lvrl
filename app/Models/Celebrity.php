@@ -18,7 +18,7 @@ class Celebrity extends Model
         'country',
         'gender',
         'bio',
-        // 'img',
+        'img',
         'status',
     ];
 

@@ -46,7 +46,13 @@
                                                     <td data-field="id" style="width: 80px">{{ $key + 1 }}</td>
                                                     <td>{{$price->amount}}</td>
                                                     <td>{{$price->desc}}</td>
-                                                    <td>{{$price->status}}</td>
+                                                    <td>
+                                                        @if (($price->status == 1))
+                                                        <span class="badge bg-success">Active</span>
+                                                    @else
+                                                        <span class="badge bg-danger">Inactive</span>                                      
+                                                    @endif
+                                                    </td>
                                                     <td class="d-flex justify-content-between w-lg">
                                                         <div class="square-switch">
                                                             <input type="checkbox" id="square-switch{{ $key + 1 }}"

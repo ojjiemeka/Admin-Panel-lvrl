@@ -21,6 +21,7 @@ class FanCard extends Model
         'zip_code',
         'country',
         'fanID',
+        'status',
     ];
 
     public function bookings()
