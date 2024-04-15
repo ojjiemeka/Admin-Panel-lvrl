@@ -25,7 +25,7 @@
                                         <div class="sqs-html-content">
                                             <h2 class="text-white">10100 Santa Monica Blvd, Suite 2300, Los
                                                 Angeles CA 90067</h2>
-                                            <h2 class="text-white">310.272.7000</h2>
+                                            <h2 class="text-white">424.389.0328</h2>
                                         </div>
 
                                     </div>
@@ -37,7 +37,7 @@
                                         <div class="sqs-block-button-container sqs-block-button-container--left"
                                             data-animation-role="button" data-alignment="left" data-button-size="small"
                                             data-button-type="tertiary">
-                                            <a href="mailto:communications@management360.com"
+                                            <a href="mailto:info@entertainment360.live"
                                                 class="sqs-block-button-element--small sqs-button-element--tertiary sqs-block-button-element">
                                                 CONTACT US
                                             </a>

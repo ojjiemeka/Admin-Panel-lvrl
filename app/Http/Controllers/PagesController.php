@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Celebrity;
+use App\Models\Price;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Exception;
@@ -31,7 +32,26 @@ class PagesController extends Controller
 
     public function vipSubscription()
     {
-        return view('home.becomeAVip');
+        $prices = Price::where('desc', 'fancard')->get();
+        // dd($prices);
+
+        try {
+            // Call the countries() function to get the country names
+            $countries = countries();
+
+            // Pass the $countries variable to the view
+            return view('home.becomeAVip', [
+                'prices'           => $prices,
+                'countries'        => $countries,
+                ]);
+        } catch (Exception $e) {
+            // Handle the exception and return a custom error message
+            $errorMessage = $e->getMessage();
+            return view('home.becomeAVip', [
+                'prices'        => $prices,
+                'countries'     => $countries,
+                ]);
+        }
     }
 
     public function booking(string $id)
@@ -56,5 +76,10 @@ class PagesController extends Controller
                 'countries'     => $countries,
                 ]);
         }
+    }
+
+    public function successPage()
+    {
+        return view('home.success');
     }
 }

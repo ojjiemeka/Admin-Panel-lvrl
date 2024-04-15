@@ -9,13 +9,8 @@
 
         <div class="body-inner">
          <!-- banner start-->
-         <!-- banner end-->
-         <div id="page-banner-area" class="page-banner-area">
-             <!-- Subpage title start -->
-            
-          </div><!-- Page Banner end -->
     
-          <section id="ts-speakers" class="ts-speakers speaker-classic mt-60">
+          <section id="ts-speakers" class="ts-speakers speaker-classic mt-60" style="height: 85vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -29,7 +24,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="ts-speaker">
                             <div class="speaker-img">
-                                <img class="img-fluid" src="{{ $celeb->img }}"alt="">
+                                <img class="img-fluid" src="{{ url($celeb->img) }}"alt="">
                                 <a class="view-speaker ts-image-popup">
                                     <i class="icon icon-plus">
                                     </i>

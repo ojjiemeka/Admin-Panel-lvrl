@@ -16,51 +16,80 @@
             </div><!-- Page Banner end -->
 
             <section id="ts-speakers" class="ts-speakers speaker-classic mt-60">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 mx-auto text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mx-auto text-center">
 
-                                <h2 class="section-title text-center">
-                                    Meet Your Favourite Celebrities
-                                </h2>
+                            <h2 class="section-title text-center">
+                                Meet Your Favourite Celebrities
+                            </h2>
 
-                                <div class="mb-3">
-                                    <img class="w-50" src="{{ asset($data->img) }}" alt="">
+                            <div class="mb-3">
+                                <img class="w-50" src="{{ asset($data->img) }}" alt="">
+                                <div class="gold mt-4 mb-2">
+                                    <i class='bx bx-md bxs-star'></i>
+                                    <i class='bx bx-md bxs-star'></i>
+                                    <i class='bx bx-md bxs-star'></i>
+                                    <i class='bx bx-md bxs-star'></i>
+                                    <i class='bx bx-md bxs-star'></i>
                                 </div>
+                                <div class="d-grid">
+                                    <span class="gold mb-2 fw-bold">Born: {{$data->date_of_birth}}</span>
+                                    <span class="gold mb-2 fw-bold">Country: {{$data->country}}</span>
+                                </div>
+                               <div class="d-flex fw-bold gold justify-content-evenly mb-2 ">
+                               <div>Speaking & Appearance Fee:</div>
+                                <span>Regular: $2,500</span>
+                                <span>VIP: $4,450</span>
+                                <span>Regular: $6,500</span>
+                               </div>
+                            </div>
 
-                                <h3 class="ts-title">
-                                    Request Booking Information on <span class="gold">{{ $data->fullname }}</span>
-                                </h3>
+                            <h3 class="ts-title">
+                                Request Booking Information on <span class="gold">{{ $data->fullname }}</span>
+                            </h3>
+
+                            <h2 class="ts-title">
+                                We are happy to assist you with your interest in booking Ben Robson . Please provide
+                                details about your organization, the type of event, or the celebrity you would like to
+                                secure, and an agent will be in touch shortly.
+                            </h2>
+                            <h4 class="text-danger">During normal business hours, we respond to most inquiries within 4
+                                hours.</h4>
 
 
-                                <h2 class="ts-title">
-                                    We are happy to assist you with your interest in booking Ben Robson . Please provide
-                                    details about your organization, the type of event, or the celebrity you would like to
-                                    secure, and an agent will be in touch shortly.
-                                </h2>
-                                <h4 class="text-danger">During normal business hours, we respond to most inquiries within 4
-                                    hours.</h4>
-
-
-                            </div><!-- col end-->
-                        </div><!-- row end-->
-                        <form id="contact-form" class="contact-form"
-                            action="{{route('bookings.store')}}" method="post">
-                            <div class="row">
-                                <div class="col-lg-6 mx-auto mb-4">
-                                    <div class="error-container"></div>
-                                    <div>
-                                        <div class="bookingCard p-4">
-                                            <div>
-                                                <h3>Tell us about your event</h3>
+                        </div><!-- col end-->
+                    </div><!-- row end-->
+                    <form id="contact-form" class="contact-form" action="{{ route('bookings.store') }}" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-12 mx-auto mb-4">
+                                <div class="error-container"></div>
+                                <div>
+                                    <div class="bookingCard p-4">
+                                        <form action="{{ route('bookings.store') }}" method="post">
+                                            <div class="align-items-center d-flex justify-content-between">
+                                                <div>
+                                                    <h3>Tell us about your event</h3>
+                                                </div>
+                                                @include('components.error')
                                             </div>
+
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="">Celebrity:</label>
                                                         <input class="form-control form-control-name"
-                                                            value="{{$data->fullname}}" name="celebrity_name" id="f-name"
-                                                            type="text" required disabled>
+                                                            value="{{ $data->fullname }}" name="celebrity_name"
+                                                            id="f-name" type="text" required readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label required for="date">Fan Card ID</label>
+                                                        <input class="form-control form-control-name"
+                                                            placeholder="eg: abc1234" name="fanID" id="f-name"
+                                                            type="text" maxlength="8" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -121,6 +150,14 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label required for="date">Nearest Landmark</label>
+                                                        <input class="form-control form-control-name"
+                                                            placeholder="eg: Airport" name="nearest_airport" id="l-name"
+                                                            type="text" required>
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label required for="date">Event Location</label>
@@ -131,110 +168,22 @@
                                             </div>
                                             <div class="form-group">
                                                 <label required for="date">Additional Information</label>
-                                                <textarea class="form-control form-control-message" name="message" id="message" placeholder="Your message...*"
-                                                    rows="6" required></textarea>
+                                                <textarea class="form-control form-control-message" name="additional_info" id="message"
+                                                    placeholder="Your message...*" rows="6" required></textarea>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mx-auto">
 
-                                    <div class="error-container"></div>
-                                    <div class="row bookingCard">
-                                        <div>
-                                            <h3 class="ts-title">
-                                                Tell us about Yourself/Organization
-                                            </h3>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label required for="date">Full Name</label>
-                                                <input class="form-control form-control-name"
-                                                    placeholder="eg: Sylvester Stallone" name="full_name" id="f-name"
-                                                    type="text" required>
+                                            <div class="text-center"><br>
+                                                <button class="btn" type="submit"> Submit Request</button>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Job Title</label>
-                                                <input class="form-control form-control-name" placeholder="eg: Doctor"
-                                                    name="job_title" id="l-name" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Sex</label>
-                                                <select required class="form-control" name="gender" id=""
-                                                    required>
-                                                    <option disabled selected>Select Gender*</option>
-                                                    <option value="M">
-                                                        Male
-                                                    </option>
-                                                    <option value="F">
-                                                        Female
-                                                    </option>
-                                                    <option value="Zombie">
-                                                        Specify in Decsription
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Phone number</label>
-                                                <input class="form-control form-control-name" placeholder="eg: +123456789"
-                                                    name="phone_number" id="l-name" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Email</label>
-                                                <input class="form-control form-control-name" placeholder="eg: abc@123.com"
-                                                    name="email" id="l-name" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Address</label>
-                                                <input class="form-control form-control-name"
-                                                    placeholder="eg: Apt 123 Str 456" name="street_address" id="l-name"
-                                                    type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Zip Code</label>
-                                                <input class="form-control form-control-name" placeholder="eg: 10001"
-                                                    name="zip_code" id="l-name" type="text" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                             <label for="formrow-inputState" class="form-label">Country</label>
-                                             <select id="formrow-inputState" class="form-select" name="country">
-                                                <option>Choose Country</option>
-                                                 @foreach ($countries as $countryName)
-                                                     <option>{{ $countryName }}</option>
-                                                 @endforeach
-                                             </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label required for="date">Nearest Landmark</label>
-                                                <input class="form-control form-control-name" placeholder="eg: Airport"
-                                                    name="nearest_airport" id="l-name" type="text" required>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                </div>
-                                <div class="text-center"><br>
-                                    <button class="btn" type="submit"> Submit Request</button>
                                 </div>
                             </div>
-                        </form><!-- Contact form end -->
-                    </div><!-- container end-->
-             
+
+                        </div>
+                    </form><!-- Contact form end -->
+                </div><!-- container end-->
+
 
                 <!-- shap img-->
                 <div class="speaker-shap">

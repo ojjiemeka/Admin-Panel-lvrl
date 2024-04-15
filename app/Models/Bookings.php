@@ -26,4 +26,6 @@ class Bookings extends Model
     {
         return $this->belongsTo(FanCard::class, 'fanID', 'fanID');
     }
+
+    public $timestamps = false;
 }

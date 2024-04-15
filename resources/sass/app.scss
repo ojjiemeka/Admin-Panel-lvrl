@@ -1,17 +1,16 @@
-// Fonts
+
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variables
+
 @import 'variables';
 
-// Bootstrap
-@import '../libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css';
-@import '../libs/select2/css/select2.min.css';
-@import '../css/app.min.css';
-@import '../css/bootstrap.min.css';
-@import '../css/icons.min.css';
-@import '../libs/bootstrap-editable/css/bootstrap-editable.css';
 
+@import url('../libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css');
+@import url('../libs/select2/css/select2.min.css');
+@import url('../css/app.min.css');
+@import url('../css/bootstrap.min.css');
+@import url('../css/icons.min.css');
+@import url('../libs/bootstrap-editable/css/bootstrap-editable.css');
 
 .cusWdth{
     width: 10em;

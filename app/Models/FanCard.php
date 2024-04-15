@@ -22,10 +22,14 @@ class FanCard extends Model
         'country',
         'fanID',
         'status',
+        'amount'
     ];
 
     public function bookings()
     {
         return $this->hasMany(Bookings::class, 'fanID', 'fanID');
     }
+
+    public $timestamps = false;
+
 }

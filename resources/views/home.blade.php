@@ -223,7 +223,7 @@
                                                             autocomplete="off">
                                                         <button type="button"
                                                             class="btn btn-secondary docs-datepicker-trigger" disabled>
-                                                            <i class="mdi mdi-calendar" aria-hidden="true"></i>
+                                                            
                                                         </button>
                                                     </div>
                                                     <div class="docs-datepicker-container"></div>
@@ -274,7 +274,7 @@
 
                                     <div class="row">
                                         <div class="mb-3 col-lg-12">
-                                            <label for="resume">Resume</label>
+                                            <label for="resume">Image</label>
                                             <input type="file" name="img" class="form-control" id="resume">
                                         </div>
                                     </div>

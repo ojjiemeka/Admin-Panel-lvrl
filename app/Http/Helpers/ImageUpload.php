@@ -2,7 +2,7 @@
 
 use Illuminate\Http\UploadedFile;
 
-function uploadImage(UploadedFile $file, $folder = 'images', $fileName = null)
+function uploadImage(UploadedFile $file, $folder = 'storage/images', $fileName = null)
 {
     // Generate a unique file name if not provided
     $fileName = $fileName ?: time() . '_' . $file->getClientOriginalName();

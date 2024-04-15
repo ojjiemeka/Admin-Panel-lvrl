@@ -17,7 +17,7 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-4 w-50">
-                                        <img src="{{$celeb->img}}" class="cusWdth" alt="">
+                                        <img src="{{$celeb->img}}" class="w-100" alt="">
                                     </div>
 
 

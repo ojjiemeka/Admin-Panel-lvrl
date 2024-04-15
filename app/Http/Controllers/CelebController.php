@@ -62,6 +62,7 @@ class CelebController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->file('img'));
         // Validate the request data
         $validatedData = $request->validate([
             'fullname' => 'required',
@@ -70,10 +71,10 @@ class CelebController extends Controller
             'country' => 'required',
             'gender' => 'required',
             'bio' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Add validation for the image
+            // 'img' => 'required|image|mimetypes:image/jpeg,image/png,image/gif|max:2048',
             // Add validation rules for other fields
         ]);
-
+        
         // dd($validatedData);
 
         // Manually add the 'status' field with value 1
@@ -82,6 +83,9 @@ class CelebController extends Controller
         // Handle image upload using the helper function
         $imagePath = uploadImage($request->file('img'));
 
+        // dd($imagePath, $validatedData);
+        
+        // dd($request->input());
         // Check if the information already exists
         $existingRecord = Celebrity::where('fullname', $validatedData['fullname'])->first();
 
@@ -131,32 +135,40 @@ class CelebController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = Celebrity::find($id);
-        
-        //  Validate the request data
-        $validatedData = $request->validate([
-            'fullname' => 'required',
-            'date_of_birth' => 'required',
-            'category' => 'required',
-            'country' => 'required',
-            'gender' => 'required',
-            'bio' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Add validation for the image
-            // Add validation rules for other fields
-        ]);
-        
-        // dd($validatedData);
+         // Find the celebrity record
+    $data = Celebrity::findOrFail($id);
 
-        // dd($validatedData);
-        if ($request->hasFile('img')) {
-            // Dump and die the image name before saving
-            // dd($request->file('img')->getClientOriginalName());
-            
-            $imagePath = uploadImage($request->file('img'));
-            $validatedData['img'] = $imagePath;
+    // Validate the request data
+    $validatedData = $request->validate([
+        'fullname' => 'required',
+        'date_of_birth' => 'required',
+        'category' => 'required',
+        'country' => 'required',
+        'gender' => 'required',
+        'bio' => 'required',
+        // 'img' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Allow the image to be optional
+        // Add validation rules for other fields
+    ]);
+
+    // Check if the image has been uploaded
+    if ($request->hasFile('img')) {
+        // Upload the image and update the image path
+        $imagePath = uploadImage($request->file('img'));
+        $validatedData['img'] = $imagePath;
+    }
+
+    // Get the original data before the update
+    $originalData = $data->getOriginal();
+
+    // Loop through the validated data and update only the changed and non-empty fields
+    foreach ($validatedData as $key => $value) {
+        if ($value !== $originalData[$key] && !empty($value)) {
+            $data->$key = $value;
         }
-
-        // Update the celebrity record with the validated data
+    }   
+    
+    dd($validatedData);
+    // Update the celebrity record with the validated data
         $data->update($validatedData);
 
         if ($data->update($validatedData)) {

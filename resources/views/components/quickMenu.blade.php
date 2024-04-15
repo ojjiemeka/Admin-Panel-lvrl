@@ -10,7 +10,7 @@
                 <div class="d-flex justify-content-between">
                     <div>
                         <a href="{{route('home')}}" class="text-muted">
-                            <i class="bx bx-lg bxs-home"></i>
+                            <i class='bx bxs-home bx-lg'></i>
                         </a>
                     </div>
                     <div>

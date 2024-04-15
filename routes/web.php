@@ -26,12 +26,14 @@ Route::get('/contact', [App\Http\Controllers\PagesController::class, 'Contact'])
 Route::get('/celebrities', [App\Http\Controllers\PagesController::class, 'celebrities'])->name('celebrities');
 Route::get('/vip-subscription', [App\Http\Controllers\PagesController::class, 'vipSubscription'])->name('vip-subscription');
 Route::get('/booking/{id}', [App\Http\Controllers\PagesController::class, 'booking'])->name('bookings');
+Route::get('/success', [App\Http\Controllers\PagesController::class, 'successPage'])->name('success');
 
 
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mailer', [App\Http\Controllers\HomeController::class, 'createMail'])->name('createMail');
+Route::get('/send-mail', [App\Http\Controllers\MailController::class, 'sendMail'])->name('sendMail');
 Route::resource('celebs', CelebController::class);
 Route::resource('prices', PricesController::class);
 Route::resource('bookings', BookingController::class);

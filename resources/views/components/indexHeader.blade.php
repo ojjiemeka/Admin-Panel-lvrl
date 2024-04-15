@@ -38,7 +38,7 @@
     <div class="header-inner">
         <div id="logoWrapper" class="title-logo-wrapper" data-content-field="site-title">
 
-            <h1 id="logoImage" class="tmpl-loading logo-image"><a href="index.html"><img
+            <h1 id="logoImage" class="tmpl-loading logo-image"><a href="/"><img
                         src="http://images.squarespace-cdn.com/content/v1/60e54653e526b236351f2f2f/366dd1ba-6834-4742-b9f7-3e73988ba398/E360+Logo.png?format=1500w"
                         alt="Entertainment 360" /></a></h1>
 

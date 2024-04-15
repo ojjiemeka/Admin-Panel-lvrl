@@ -36,10 +36,10 @@
                                     <div id="player"></div>
                                 </div>
                             </div>
-                            <div class="index-image-overlay"></div>
+                            <div class="index-image-overlay" style="height: 100vh;"></div>
 
-                            <div class="content page-content has-main-media tmpl-loading" id="home-page" data-url-id="home">
-                                <div class="content-inner has-content">
+                            <div class="content page-content has-main-media tmpl-loading" style="height: 100vh;" id="home-page" data-url-id="home">
+                                <div class="content-inner has-content" style="height: 100vh;">
                                     <div class="sqs-layout sqs-grid-12 columns-12" data-type="page"
                                         data-updated-on="1654664235443" id="page-60e690d1501d3f22da85eee6">
                                         <div class="row sqs-row">

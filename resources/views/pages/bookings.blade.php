@@ -170,13 +170,8 @@
                                                         <th scope="col" style="width: 60px">#</th>
                                                         <th scope="col">Fan ID</th>
                                                         <th scope="col">Full Name</th>
-                                                        <th scope="col">Job Title</th>
-                                                        <th scope="col">Sex</th>
                                                         <th scope="col">Phonenumber</th>
                                                         <th scope="col">Email</th>
-                                                        <th scope="col">Address</th>
-                                                        <th scope="col">Zip Code</th>
-                                                        <th scope="col">Country</th>
                                                         <th scope="col">Status</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
@@ -186,21 +181,17 @@
                                                         <tr>
                                                             <td data-field="id" style="width: 80px">{{ $key + 1 }}
                                                             </td>
-                                                            {{-- <td>{{ $fanInfo->fanID }}</td>
-                                                            <td>{{ $fanInfo->job_title }}</td>
-                                                            <td>{{ $fanInfo->gender }}</td>
+                                                            <td>{{ $fanInfo->fanID }}</td>
+                                                            <td>{{ $fanInfo->full_name }}</td>
                                                             <td>{{ $fanInfo->phone_number }}</td>
                                                             <td>{{ $fanInfo->email }}</td>
-                                                            <td>{{ $fanInfo->street_address }}</td>
-                                                            <td>{{ $fanInfo->zip_code }}</td>
-                                                            <td>{{ $fanInfo->country }}</td> --}}
-                                                            {{-- <td>
+                                                            <td>
                                                                 @if ($fanInfo->status == 1)
                                                                     <span class="badge bg-success">Active</span>
                                                                 @else
                                                                     <span class="badge bg-danger">Inactive</span>
                                                                 @endif
-                                                            </td> --}}
+                                                            </td>
                                                             <td class="d-flex justify-content-between w-lg">
                                                                 <div class="square-switch">
                                                                     <input type="checkbox"
@@ -281,7 +272,6 @@
                                                                     </div><!-- /.modal-dialog -->
                                                                 </div>
                                                                 
-
                                                                 <div>
                                                                     <a class="bx bx-sm bx-trash text-danger"
                                                                         data-bs-toggle="modal"
@@ -310,7 +300,7 @@
                                                                                     data-bs-dismiss="modal">Close</button>
 
                                                                                 <form
-                                                                                    action=""
+                                                                                    action="{{route('fancards.destroy',$fanInfo->id)}}"
                                                                                     method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')
@@ -344,6 +334,7 @@
                             </div>
                         </div>
 
+                        @foreach($bookingsInfo as $booking)
                         <div class="col-xl-4 col-sm-4">
                             <div class="card">
                                 <div class="card-body">
@@ -351,32 +342,64 @@
                                         <div class="col-lg-4">
                                             <div class="text-lg-center">
                                                 <div class="avatar-sm me-3 mx-lg-auto mb-3 mt-1 float-start float-lg-none">
-                                                    <span
-                                                        class="avatar-title rounded-circle bg-primary-subtle text-primary font-size-16">
-                                                        M
+                                                    <span class="avatar-title rounded-circle bg-primary-subtle text-primary font-size-16">
+                                                        <a class="bx bx-sm bx-trash text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $booking->id  }}"></a>
                                                     </span>
+                                                    
+
+                                                    <div class="modal fade" id="deleteModal{{ $booking->id  }}">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">Delete</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>Are you sure you want to delete {{ $fullName}}'s Booking for
+                                                                        <br>
+                                                                        <span>Celeb: {{ $booking->celebrity_name  }}</span>
+                                                                        <br>
+                                                                        <span>Event Type: {{ $booking->event_type  }}</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary light btn-sm"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                
+                                                                    <form action="{{ route('bookings.destroy', $booking->id ) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                                            Delete
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <h5 class="mb-1 font-size-15 text-truncate">Marion Burton</h5>
-                                                <a href="javascript: void(0);" class="text-muted">@Skote</a>
+                                                <h5 class="mb-1 font-size-15 text-truncate">{{ $booking->celebrity_name }}</h5>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-8">
                                             <div>
-                                                <a href="invoices-detail.html"
-                                                    class="d-block text-primary text-decoration-underline mb-2">Invoice
-                                                    #14251</a>
-                                                <h5 class="text-truncate mb-4 mb-lg-5">Skote Dashboard UI</h5>
+                                                <a href=""
+                                                    class="d-block text-primary text-decoration-underline mb-2">Fan ID: 
+                                                    {{$booking->fanID}}</a>
+                                                <h5 class="text-truncate">{{$fullName}}</h5>
+                                                <h5 class="text-truncate mb-4 mb-lg-5">{{$booking->event_type}}</h5>
                                                 <ul class="list-inline mb-0">
                                                     <li class="list-inline-item me-3">
                                                         <h5 class="font-size-14" data-bs-toggle="tooltip"
                                                             data-bs-placement="top" title="Amount"><i
-                                                                class="bx bx-money me-1 text-muted"></i> $1455</h5>
+                                                                class="bx bx-money me-1 text-muted"></i> {{$booking->approx_budget}}</h5>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <h5 class="font-size-14" data-bs-toggle="tooltip"
                                                             data-bs-placement="top" title="Due Date"><i
-                                                                class="bx bx-calendar me-1 text-muted"></i> 10 Oct, 19</h5>
+                                                                class="bx bx-calendar me-1 text-muted"></i> {{$booking->event_date}}</h5>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -386,6 +409,9 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+
+                        
                         <!-- end row -->
                     </div> <!-- container-fluid -->
                 </div>
