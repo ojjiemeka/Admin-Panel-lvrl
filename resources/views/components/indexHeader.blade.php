@@ -30,6 +30,12 @@
                     BECOME A VIP <i class='bx bxs-star bx-lg bx-burst gold' ></i>
                 </a>
             </div>
+
+            <div class="collection">
+                <a href="{{ route('order') }}">
+                    ORDER NOW
+                </a>
+            </div>
         </nav>
     </div>
 </div>

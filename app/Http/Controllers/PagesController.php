@@ -6,6 +6,7 @@ use App\Models\Celebrity;
 use App\Models\Price;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use GuzzleHttp\Client;
 use Exception;
 
 
@@ -81,5 +82,42 @@ class PagesController extends Controller
     public function successPage()
     {
         return view('home.success');
+    }
+
+    public function orderNow( Request $request )
+    {
+        // Get the user's IP address
+        $userIp = $request->ip();
+        // Make a request to the ipinfo.io API
+        $client = new Client();
+        $response = $client->get("https://ipinfo.io/{$userIp}?token=c70030889cf941");
+        // Parse the JSON response
+        $data = json_decode($response->getBody());
+        // Extract user information
+
+        // $location = $data->loc;
+        // $country = $data->country;
+
+        // dd($country);
+
+        return view('pages.orderNow', [
+            // 'country' => $country
+        ]);
+    }
+
+    public function buyBook( Request $request )
+    {
+
+        return view('pages.placeOrder', [
+            // 'country' => $country
+        ]);
+    }
+
+    public function payNow( Request $request )
+    {
+
+        return view('home.payNow', [
+            // 'country' => $country
+        ]);
     }
 }

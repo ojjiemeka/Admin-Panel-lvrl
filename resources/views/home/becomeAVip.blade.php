@@ -170,7 +170,7 @@
                                  <div class="form-group">
                                      <label required for="date">Phone number</label>
                                      <input class="form-control form-control-name" placeholder="Phone Number" name="phone_number" id="phone_number"
-                                     type="text" pattern="\+\d{11}" title="Please enter a phone number in the format +12345678901"
+                                     type="text" pattern="\+\d{16}" title="Please enter a phone number in the format +12345678901"
                                      value="+"
                                      required>
                                  </div>

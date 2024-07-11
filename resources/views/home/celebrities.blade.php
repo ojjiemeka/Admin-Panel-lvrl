@@ -10,9 +10,9 @@
         <div class="body-inner">
          <!-- banner start-->
     
-          <section id="ts-speakers" class="ts-speakers speaker-classic mt-60" style="height: 85vh;">
+          <section id="ts-speakers" class="ts-speakers speaker-classic">
             <div class="container">
-                <div class="row">
+                <div class="row mt-60">
                     <div class="col-lg-8 mx-auto">
                         <h2 class="section-title text-center">
                             Meet Top Celebrities
@@ -24,7 +24,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="ts-speaker">
                             <div class="speaker-img">
-                                <img class="img-fluid" src="{{ url($celeb->img) }}"alt="">
+                                <img class="img-fluid" src="{{ 'public/' . $celeb->img }}"alt="">
                                 <a class="view-speaker ts-image-popup">
                                     <i class="icon icon-plus">
                                     </i>
@@ -32,11 +32,7 @@
                             </div>
                             <div class="ts-speaker-info">
                                 <h3 class="ts-title">
-                                    {{-- <a href="#" class=" booking-link" data-fullname="{{ $celeb->fullname }}" data-img="{{ $celeb->img }}">{{ $celeb->fullname }}</a> --}}
-                                    <form action="{{ route('bookings', $celeb->id) }}" method="GET">
-                                        @csrf
-                                        <button type="submit" class="b-none">{{ $celeb->fullname }}</button>
-                                    </form>
+                                    <a href="{{route('bookings', $celeb->id)}}" class=" booking-link" data-fullname="{{ $celeb->fullname }}" data-img="{{ $celeb->img }}">{{ $celeb->fullname }}</a>
                                 </h3>
                                 <p>
                                     {{ $celeb->category }}
@@ -63,14 +59,14 @@
         <!-- ts footer area end-->
      </div>
 
-     {{-- <script>
+     <script>
         // JavaScript to handle clicking on the booking link
         document.querySelectorAll('.booking-link').forEach(link => {
             link.addEventListener('click', function() {
                 const fullname = this.getAttribute('data-fullname');
                 const img = this.getAttribute('data-img');
                 // Make an AJAX request to the bookings route
-                fetch('{{ route("bookings") }}', {
+                fetch('{{ route("bookings", ['id' => $celeb->id]) }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -82,7 +78,7 @@
                     // Handle the response as needed
                     if (response.ok) {
                         // Redirect to the bookings page
-                        window.location.href = '{{ route("bookings") }}';
+                        window.location.href = '{{ route("bookings", ['id' => $celeb->id]) }}';
                     } else {
                         // Handle error response
                         console.error('Error:', response.statusText);
@@ -93,5 +89,5 @@
                 });
             });
         });
-    </script> --}}
+    </script>
 @endsection

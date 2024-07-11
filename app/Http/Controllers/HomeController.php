@@ -37,6 +37,8 @@ class HomeController extends Controller
             // Call the countries() function to get the country names
             $countries = countries();
 
+            // dd($countries);
+
             // Pass the $countries variable to the view
             return view('home', [
                 'countries'     => $countries,

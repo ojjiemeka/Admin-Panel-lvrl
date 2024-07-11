@@ -20,34 +20,37 @@ class CelebController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index()
-    {
-        $calculateAge = function ($dateOfBirth) {
-            return Carbon::parse($dateOfBirth)->age;
-        };
+     public function index()
+     {
+         $calculateAge = function ($dateOfBirth) {
+             return Carbon::parse($dateOfBirth)->age;
+         };
+     
+         $celebsList = $this->getAllCelebs();
 
-        $celebsList = $this->getAllCelebs();
-
-        try {
-            // Call the countries() function to get the country names
-            $countries = countries();
-
-            // Pass the $countries variable to the view
-            return view('pages.viewCeleb', [
-                'countries'     => $countries,
-                'celebsList'    => $celebsList,
-                'calculateAge'  => $calculateAge
-            ]);
-        } catch (Exception $e) {
-            // Handle the exception and return a custom error message
-            $errorMessage = $e->getMessage();
-            return view('pages.viewCeleb', [
-                'errorMessage' => $errorMessage,
-                'celebsList'    => $celebsList,
-                'calculateAge'  => $calculateAge
-            ]);
-        }
-    }
+        //  dd($celebsList);
+     
+         try {
+             // Call the countries() function to get the country names
+             $countries = countries();
+     
+             // Pass the $countries variable to the view
+             return view('pages.viewCeleb', [
+                 'countries'     => $countries,
+                 'celebsList'    => $celebsList,
+                 'calculateAge'  => $calculateAge
+             ]);
+         } catch (Exception $e) {
+             // Handle the exception and return a custom error message
+             $errorMessage = $e->getMessage();
+             return view('pages.viewCeleb', [
+                 'errorMessage' => $errorMessage,
+                 'celebsList'    => $celebsList,
+                 'calculateAge'  => $calculateAge
+             ]);
+         }
+     }
+     
 
     /**
      * Show the form for creating a new resource.

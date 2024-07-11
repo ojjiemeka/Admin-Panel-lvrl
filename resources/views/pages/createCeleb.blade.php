@@ -1,120 +1,153 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="main-content">
+<div class="main-content">
 
-        <div class="page-content">
-            <div class="container-fluid">
+    <div class="page-content">
+        <div class="container-fluid">
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Create Task</h4>
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Detail</h4>
 
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tasks</a></li>
-                                    <li class="breadcrumb-item active">Create Task</li>
-                                </ol>
-                            </div>
-
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Invoices</a></li>
+                                <li class="breadcrumb-item active">Detail</li>
+                            </ol>
                         </div>
+
                     </div>
                 </div>
-                <!-- end page title -->
+            </div>
+            <!-- end page title -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Create New Task</h4>
-                                <form class="outer-repeater" method="post">
-                                    <div data-repeater-list="outer-group" class="outer">
-                                        <div data-repeater-item class="outer">
-                                            <div class="form-group row mb-4">
-                                                <label for="taskname" class="col-form-label col-lg-2">Task Name</label>
-                                                <div class="col-lg-10">
-                                                    <input id="taskname" name="taskname" type="text"
-                                                        class="form-control" placeholder="Enter Task Name...">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-4">
-                                                <label class="col-form-label col-lg-2">Task Description</label>
-                                                <div class="col-lg-10">
-                                                    <textarea id="taskdesc-editor" name="area"></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row mb-4">
-                                                <label class="col-form-label col-lg-2">Task Date</label>
-                                                <div class="col-lg-10">
-                                                    <div class="input-daterange input-group" data-provide="datepicker">
-                                                        <input type="text" class="form-control" placeholder="Start Date"
-                                                            name="start" />
-                                                        <input type="text" class="form-control" placeholder="End Date"
-                                                            name="end" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="inner-repeater mb-4">
-                                                <div data-repeater-list="inner-group" class="inner form-group mb-0 row">
-                                                    <label class="col-form-label col-lg-2">Add Team Member</label>
-                                                    <div data-repeater-item class="inner col-lg-10 ms-md-auto">
-                                                        <div class="mb-3 row align-items-center">
-                                                            <div class="col-md-6">
-                                                                <input type="text" class="inner form-control"
-                                                                    placeholder="Enter Name..." />
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="mt-4 mt-md-0">
-                                                                    <input class="form-control" type="file">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="mt-2 mt-md-0 d-grid">
-                                                                    <input data-repeater-delete type="button"
-                                                                        class="btn btn-primary inner" value="Delete" />
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row justify-content-end">
-                                                    <div class="col-lg-10">
-                                                        <input data-repeater-create type="button"
-                                                            class="btn btn-success inner" value="Add Number" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-4">
-                                                <label for="taskbudget" class="col-form-label col-lg-2">Budget</label>
-                                                <div class="col-lg-10">
-                                                    <input id="taskbudget" name="taskbudget" type="text"
-                                                        placeholder="Enter Task Budget..." class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="row justify-content-end">
-                                    <div class="col-lg-10">
-                                        <button type="submit" class="btn btn-primary">Create Task</button>
-                                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="invoice-title">
+                                <h4 class="float-end font-size-16">Order # 12345</h4>
+                                <div class="auth-logo mb-4">
+                                    <img src="assets/images/logo-dark.png" alt="logo" class="auth-logo-dark" height="20"/>
+                                    <img src="assets/images/logo-light.png" alt="logo" class="auth-logo-light" height="20"/>
                                 </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <address>
+                                        <strong>Billed To:</strong><br>
+                                        John Smith<br>
+                                        1234 Main<br>
+                                        Apt. 4B<br>
+                                        Springfield, ST 54321
+                                    </address>
+                                </div>
+                                <div class="col-sm-6 text-sm-end">
+                                    <address class="mt-2 mt-sm-0">
+                                        <strong>Shipped To:</strong><br>
+                                        Kenny Rigdon<br>
+                                        1234 Main<br>
+                                        Apt. 4B<br>
+                                        Springfield, ST 54321
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 mt-3">
+                                    <address>
+                                        <strong>Payment Method:</strong><br>
+                                        Visa ending **** 4242<br>
+                                        jsmith@email.com
+                                    </address>
+                                </div>
+                                <div class="col-sm-6 mt-3 text-sm-end">
+                                    <address>
+                                        <strong>Order Date:</strong><br>
+                                        October 16, 2019<br><br>
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="py-2 mt-3">
+                                <h3 class="font-size-15 fw-bold">Order summary</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px;">No.</th>
+                                            <th>Item</th>
+                                            <th class="text-end">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>Skote - Admin Dashboard Template</td>
+                                            <td class="text-end">$499.00</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>02</td>
+                                            <td>Skote - Landing Template</td>
+                                            <td class="text-end">$399.00</td>
+                                        </tr>
 
+                                        <tr>
+                                            <td>03</td>
+                                            <td>Veltrix - Admin Dashboard Template</td>
+                                            <td class="text-end">$499.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-end">Sub Total</td>
+                                            <td class="text-end">$1397.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="border-0 text-end">
+                                                <strong>Shipping</strong></td>
+                                            <td class="border-0 text-end">$13.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="border-0 text-end">
+                                                <strong>Total</strong></td>
+                                            <td class="border-0 text-end"><h4 class="m-0">$1410.00</h4></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-print-none">
+                                <div class="float-end">
+                                    <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                    <a href="javascript: void(0);" class="btn btn-primary w-md waves-effect waves-light">Send</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
+            </div>
+            <!-- end row -->
 
-            </div> <!-- container-fluid -->
-        </div>
-        <!-- End Page-content -->
-
-
+        </div> <!-- container-fluid -->
     </div>
+    <!-- End Page-content -->
+
+    
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Skote.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by Themesbrand
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 @endsection
